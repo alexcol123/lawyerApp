@@ -2,7 +2,7 @@
 
 import { Message, useAssistant as useAssistant, } from 'ai/react';
 import Image from 'next/image';
-import {  useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const roleToColorMap: Record<Message['role'], string> = {
   system: 'red',
@@ -25,7 +25,7 @@ export default function Chat() {
     stop,
   } = useAssistant({ api: '/api/assistant' });
 
-  console.log(messages)
+  const [viewBtns, setviewBtns] = useState(true)
 
   // When status changes to accepting messages, focus the input:
   const inputRef = useRef<HTMLInputElement>(null);
@@ -37,6 +37,11 @@ export default function Chat() {
 
   // }, []);
 
+  useEffect(() => {
+    messages.length ? setviewBtns(false) : setviewBtns(true)
+
+  }, [messages]);
+
 
 
   useEffect(() => {
@@ -47,22 +52,19 @@ export default function Chat() {
   }, [status]);
 
 
+  const askQuestion = (txt: string) => {
+    setInput(txt),
+      submitMessage()
+    // setviewBtns(false)
+  }
+
+
 
   return (
     <div className="flex flex-col justify-around w-full max-w-md  mx-auto h-[80vh] min-h-[80vh] bg-primary/10 p-4  ">
 
-      <div className="flex gap-4 ">
 
-        <button 
-        onClick={()=>setInput('Quiero informacion soy Casado de un ciudadano')}
-        className='border bg-muted p-3'> Quiero informacion soy   <span className='font-semibold text-primary '>Casado </span> de un ciudadano
-        </button>
 
-        <button 
-        onClick={()=>setInput('Quiero informacion soy Hijastro de un ciudadano')}
-        className='border bg-muted p-3'> Quiero informacion soy   <span className='font-semibold text-primary '>Hijastro </span> de un ciudadano
-        </button>
-      </div>
       <div className='flex  flex-col  justify-end  overflow-hidden   p-2  m-4'>
         {error != null && (
           <div className="relative px-6 py-4 text-white bg-red-500 rounded-md">
@@ -74,6 +76,9 @@ export default function Chat() {
 
         <div className=''>
           {messages.map((m: Message) => (
+
+
+
             <div
 
               key={m.id}
@@ -127,6 +132,45 @@ export default function Chat() {
           placeholder="Enviar ?"
           onChange={handleInputChange}
         />
+
+
+        {
+          viewBtns && <div className="grid grid-cols-2 gap-4 ">
+
+            <button
+              onClick={() => askQuestion('Quiero informacion sobre el programa de familias unidas, soy casado con un ciudadano')}
+              type='submit'
+              className='border bg-muted p-3'> Quiero informacion soy   <span className='font-semibold text-primary '>Casado </span> de un ciudadano
+            </button>
+
+            <button
+              onClick={() => askQuestion('Quiero informacion sobre el programa de familias unidas, soy hijastro de  un ciudadano americano')}
+              type='submit'
+              className='border bg-muted p-3'> Quiero informacion soy   <span className='font-semibold text-primary '>Hijastro </span> de un ciudadano
+            </button>
+
+
+
+
+
+            <button
+              onClick={() => askQuestion('Que es el programa ( Mantener a las Familias Juntas )')}
+              type='submit'
+              className='border bg-muted p-3'> Que es el programa   <span className='font-semibold text-primary '> Mantener a las Familias Juntas </span>
+            </button>
+
+            <button
+              onClick={() => askQuestion('Quiero informacion sobre el programa de familias unidas, si mi cónyuge ha fallecido, sigo siendo elegible')}
+              type='submit'
+              className='border bg-muted p-3'> Si mi cónyuge ha fallecido.  <span className='font-semibold text-primary '>¿sigo siendo elegible  </span>
+            </button>
+
+
+          </div>
+        }
+
+
+
         <button
           className=" w-full max-w-md p-2    text-white bg-primary text-primary-foreground rounded-lg"
           onClick={stop}

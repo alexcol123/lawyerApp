@@ -61,11 +61,11 @@ export default function Chat() {
 
 
   return (
-    <div className="flex flex-col justify-around w-full max-w-md  mx-auto h-[80vh] min-h-[80vh] bg-primary/10 p-4  ">
+    <div className="flex flex-col justify-around w-full max-w-md  mx-auto h-[80vh] min-h-[80vh] bg-primary/10 p-4  overflow-y-scroll ">
 
 
 
-      <div className='flex  flex-col  justify-end  overflow-hidden   p-2  m-4'>
+      <div className='flex  flex-col  justify-end   p-2  '>
         {error != null && (
           <div className="relative px-6 py-4 text-white bg-red-500 rounded-md">
             <span className="block sm:inline">
