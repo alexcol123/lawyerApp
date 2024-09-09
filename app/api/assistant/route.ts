@@ -46,12 +46,12 @@ export async function POST(req: Request) {
       ) {
         const tool_outputs =
           runResult.required_action.submit_tool_outputs.tool_calls.map(
-            (toolCall: any) => {
-              const parameters = JSON.parse(toolCall.function.arguments);
-
+            (toolCall: { function: { name: string } }) => {
+              // const parameters = JSON.parse(toolCall.function.arguments);
+        
               switch (toolCall.function.name) {
                 // configure your tool calls here
-
+        
                 default:
                   throw new Error(
                     `Unknown tool call function: ${toolCall.function.name}`,

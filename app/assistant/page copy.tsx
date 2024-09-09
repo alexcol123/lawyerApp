@@ -39,12 +39,12 @@ export default function Chat() {
 
 
 
-  // useEffect(() => {
-  //   if (status === 'awaiting_message') {
-  //     inputRef.current?.focus();
-  //   }
+  useEffect(() => {
+    if (status === 'awaiting_message') {
+      inputRef.current?.focus();
+    }
 
-  // }, [status]);
+  }, [status]);
 
 
 
