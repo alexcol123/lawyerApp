@@ -2,7 +2,7 @@
 
 const CallToAction = () => {
   return (
-    <div className=" flex flex-col w-full p-6 border rounded-xl bg-primary/10  ">
+    <div className=" flex flex-col w-full p-6 border rounded-xl bg-primary/10 shadow-lg  ">
 
       <h3 className="  tracking-tight">
         El Programa de Manteniendo Familias Unidas, Aprovado por el Presidente Biden te permite obtener tu residencia permanente en USA, <span className="text-destructive font-bold">Incluso si entraste ilegalmente</span>.

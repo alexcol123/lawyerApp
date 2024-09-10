@@ -18,8 +18,8 @@ const Info = () => {
       </h3>
 
       <div className="flex items-center justify-center text-primary rounded-full">
-      <div className="bg-white/10 rounded-full p-1">
-      <ArrowDownIcon />
+      <div className="bg-white/30 rounded-full p-1 animate-pulse">
+      <ArrowDownIcon  />
       </div>
       </div>
     </div>

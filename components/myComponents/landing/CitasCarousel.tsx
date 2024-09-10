@@ -27,7 +27,7 @@ const personasConCitas: PersonasConCitasType[] = [
     id: 1
   },
   {
-    nombre: "Maria Fernamda Gonzales",
+    nombre: "Maria Fernanda Gonzales",
     imagen: "citas00002.png",
     id: 2
   },
@@ -114,10 +114,13 @@ function CitasCarousel() {
 
                 }}>
                   <CardContent className="flex aspect-square items-center justify-center w-full z-50 ">
-                    <div className="w-full bg-yellow-200 border text-slate-800 px-2 py-2 font-medium rounded-xl mt-24 text-center ">
+                    <div className=" 
+                    w-full bg-destructive text-destructive-foreground border  py-2 font-medium rounded-xl  text-center
+                    justify-center mt-auto 
+                    ">
                       <div className="font-medium">
-                        <h3> {persona.nombre} </h3>  
-                        <h4  >ya tiene su cita</h4>
+                        <h3> {persona.nombre} </h3>
+                        <h4>ya tiene su cita</h4>
                       </div>
                     </div>
                   </CardContent>

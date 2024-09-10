@@ -5,7 +5,7 @@ const LandingMain = () => {
   return (
     <div
       style={{ backgroundImage: "url('/images/familia.jpg')", backgroundSize: "cover", backgroundPosition: "top" }}
-      className="h-[65vh] bg-cover rounded-xl bg-center bg-no-repeat flex items-center justify-center "
+      className="h-[65vh] bg-cover rounded-xl bg-center bg-no-repeat flex items-center justify-center shadow-lg "
 
     >
       <div className="flex flex-col justify-end h-full  w-full p-4  rounded-xl text-center space-y-8  backdrop-saturate-50  bg-white/20 ">

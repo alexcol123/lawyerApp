@@ -21,7 +21,7 @@ const HomePage = () => {
 
       <CallToAction />
 
-      <div className="p-2 bg-black  text-white rounded-xl">
+      <div className="p-2 bg-black  text-white rounded-xl ">
         <Info />
         <CitasCarousel />
       </div>
