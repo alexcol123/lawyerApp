@@ -83,16 +83,18 @@ function CitasCarousel() {
 
 
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction:false ,  })
+    Autoplay({ delay: 6000, stopOnInteraction: false, })
   )
 
 
   return (
     <div className="m-3 flex items-center justify-center rounded-xl">
+
+
       <Carousel
-      opts={{
-        loop: true,
-      }}
+        opts={{
+          loop: true,
+        }}
         plugins={[plugin.current]}
         className="w-full max-w-lg "
         onMouseEnter={plugin.current.stop}
@@ -109,12 +111,15 @@ function CitasCarousel() {
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                   borderRadius: "0.5rem",
-            
+
                 }}>
-                  <CardContent className="flex aspect-square items-center justify-center ">
-                    <span className=" font-semibold bg-primary text-primary-foreground p-2 rounded-xl mt-24 text-center ">
-                      Felicitamos a {persona.nombre}  que ya tiene su cita con inmigracion
-                    </span>
+                  <CardContent className="flex aspect-square items-center justify-center w-full z-50 ">
+                    <div className="w-full bg-yellow-200 border text-slate-800 px-2 py-2 font-medium rounded-xl mt-24 text-center ">
+                      <div className="font-medium">
+                        <h3> {persona.nombre} </h3>  
+                        <h4  >ya tiene su cita</h4>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </div>

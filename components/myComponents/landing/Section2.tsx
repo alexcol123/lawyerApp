@@ -1,27 +1,31 @@
 import { Button } from "@/components/ui/button"
+import { FaPhone } from "react-icons/fa";
 
-const Section2 = () => {
+const LandingMain = () => {
   return (
     <div
-      style={{ backgroundImage: "url('/images/familia.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
-      className="h-[60vh] bg-cover rounded-xl bg-center bg-no-repeat flex items-center justify-center"
+      style={{ backgroundImage: "url('/images/familia.jpg')", backgroundSize: "cover", backgroundPosition: "top" }}
+      className="h-[65vh] bg-cover rounded-xl bg-center bg-no-repeat flex items-center justify-center "
 
     >
-      <div className="flex flex-col justify-between h-full  w-full p-4  rounded-xl text-center space-y-8  backdrop-saturate-50  bg-white/20 ">
+      <div className="flex flex-col justify-end h-full  w-full p-4  rounded-xl text-center space-y-8  backdrop-saturate-50  bg-white/20 ">
 
-        <div className="text-lg   md:text-3xl font-semibold tracking-tight bg-white/80 p-2  rounded-xl text-primary ">
-          <h1 className="mb-2">Casado con un ciudadano americano? </h1>
+        <div className="text-lg  tracking-tight bg-white/90 p-2  rounded-xl  ">
+          <h1 className="mb-2 text-xl text-primary  font-semibold ">Estas Casado con un ciudadano americano? </h1>
+          <h2 className=" text-base  mt-2">Obtene tu residencia permanente en USA, incluso si entraste ilegalmente.</h2>
 
-          <h1>Puedes obtener tu residencia permanente en USA, incluso si entraste ilegalmente.</h1>
         </div>
 
         <div >
-          <Button variant={'destructive'} className="mt-8">
-            <a href="tel:+8044326474">Habla con Esperto Legal</a>
+          <Button asChild variant={'destructive'} className="mt-2 mb-2">
+            <div className="flex gap-2 items-center justify-center">
+              <a href="tel:+8044326474">Habla con Experto, Gratis </a>
+              <FaPhone />
+            </div>
           </Button>
         </div>
       </div>
     </div>
   )
 }
-export default Section2
+export default LandingMain
