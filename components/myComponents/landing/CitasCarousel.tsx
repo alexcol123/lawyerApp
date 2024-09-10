@@ -82,7 +82,7 @@ function CitasCarousel() {
 
 
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   )
   
 
@@ -107,7 +107,7 @@ function CitasCarousel() {
                   borderRadius: "0.5rem",
                 }}>
                   <CardContent className="flex aspect-square items-center justify-center ">
-                    <span className="text-xl font-semibold bg-primary text-primary-foreground p-2 rounded-xl mt-24 text-center ">
+                    <span className=" font-semibold bg-primary text-primary-foreground p-2 rounded-xl mt-24 text-center ">
                       Felicitamos a {persona.nombre}  que ya tiene su cita 
                     </span>
                   </CardContent>
