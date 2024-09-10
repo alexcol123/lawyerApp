@@ -50,11 +50,12 @@ export default function RootLayout({
   return (
 
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en"
+        suppressHydrationWarning>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-        <Providers>
+          <Providers>
             <Navbar />
             <main className='container py-10 '>
               <div className="mt-20">{children}</div>

@@ -8,6 +8,7 @@ const Hero = () => {
       <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">
         El Programa de Manteniendo Familias Unidas, te permite obtener tu residencia permanente en USA, incluso si entraste ilegalmente.
       </h3>
+      
       <p className="text-sm  md:text-lg  font-semibold ">
         Si estás en EE.UU y casado con un ciudadano, y entraste de manery ilegal, calificas pare este programa,  para que no tengas que salir de  EE.UU,  y puedas aplicar a la recidencia. Infórmate ahora
       </p>
