@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from 'react';
 import { IoMdSend } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 
-
 const roleToColorMap: Record<Message['role'], string> = {
   system: 'red',
   user: 'gray',
@@ -121,7 +120,7 @@ export default function Chat() {
 
         {status === 'in_progress' && (
           // <div className="w-full h-8 max-w-md p-2 mb-8 bg-gray-300 rounded-lg dark:bg-gray-600 animate-pulse" />
-          <div className='animate-pulse  bg-primary text-primary-foreground text-center capitalize p-1 mx-4'>
+          <div className='animate-pulse  bg-primary text-primary-foreground text-center capitalize p-1 mx-4 rounded-xl'>
             agente  escribiendo...
           </div>
         )}

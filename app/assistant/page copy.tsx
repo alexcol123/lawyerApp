@@ -3,6 +3,10 @@
 import { Message, useAssistant as useAssistant, } from 'ai/react';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import { IoMdSend } from "react-icons/io";
+import { FaUserCircle } from "react-icons/fa";
+
+
 
 const roleToColorMap: Record<Message['role'], string> = {
   system: 'red',
@@ -61,11 +65,11 @@ export default function Chat() {
 
 
   return (
-    <div className="flex flex-col justify-around w-full max-w-md  mx-auto h-[80vh] min-h-[80vh] bg-primary/10 p-4  ">
+    <div className="flex flex-col justify-around w-full max-w-md  mx-auto h-[80vh] min-h-[80vh] bg-primary/10 p-4  overflow-y-scroll ">
 
 
 
-      <div className='flex  flex-col  justify-end  overflow-hidden   p-2  m-4'>
+      <div className='flex  flex-col  justify-end   p-2  '>
         {error != null && (
           <div className="relative px-6 py-4 text-white bg-red-500 rounded-md">
             <span className="block sm:inline">
@@ -88,11 +92,13 @@ export default function Chat() {
 
               {m.role === 'assistant' ? <div className='flex gap-2 items-center  '>
                 <Image src={'/images/carmen.jpg'} alt="avatar" width={50} height={50} className='rounded-full object-cover h-10 w-10' />
-                <strong className='capitalize'>{`${m.role}: `}</strong>
+                {/* <strong className='capitalize'>{`${m.role}: `}</strong> */}
+
+                <strong className='capitalize'>{'Maria'}</strong>
 
               </div>
                 : <div className='flex gap-2 items-center  '>
-                  <Image src={'/images/maria.jpg'} alt="avatar" width={50} height={50} className='rounded-full object-cover h-10 w-10' />
+                  <FaUserCircle size={30} />
                   <strong className='capitalize'>Tu</strong>
 
                 </div>
@@ -116,7 +122,7 @@ export default function Chat() {
 
         {status === 'in_progress' && (
           // <div className="w-full h-8 max-w-md p-2 mb-8 bg-gray-300 rounded-lg dark:bg-gray-600 animate-pulse" />
-          <div className='animate-pulse  bg-primary text-primary-foreground text-center capitalize'>
+          <div className='animate-pulse  bg-primary text-primary-foreground text-center capitalize p-1 mx-4 rounded-xl'>
             agente  escribiendo...
           </div>
         )}
@@ -124,14 +130,6 @@ export default function Chat() {
 
 
       <form onSubmit={submitMessage} className='flex flex-col gap-4  mt-20 p-4'>
-        <input
-          ref={inputRef}
-          disabled={status !== 'awaiting_message'}
-          className=" w-full max-w-md p-2  border border-gray-300 rounded shadow-xl"
-          value={input}
-          placeholder="Enviar ?"
-          onChange={handleInputChange}
-        />
 
 
         {
@@ -159,6 +157,7 @@ export default function Chat() {
               className='border bg-muted p-3'> Que es el programa   <span className='font-semibold text-primary '> Mantener a las Familias Juntas </span>
             </button>
 
+
             <button
               onClick={() => askQuestion('Quiero informacion sobre el programa de familias unidas, si mi cónyuge ha fallecido, sigo siendo elegible')}
               type='submit'
@@ -166,17 +165,38 @@ export default function Chat() {
             </button>
 
 
+
+
           </div>
         }
 
 
 
-        <button
-          className=" w-full max-w-md p-2    text-white bg-primary text-primary-foreground rounded-lg"
-          onClick={stop}
-        >
-          Enviar
-        </button>
+        <div className='col-span-2 flex' >
+
+          <input
+            ref={inputRef}
+            disabled={status !== 'awaiting_message'}
+            className=" flex-1 p-2  border border-gray-300 rounded-l-lg shadow-xl "
+            value={input}
+            placeholder="Escribir Mensaje... "
+            onChange={handleInputChange}
+          />
+
+
+
+
+
+
+
+          <button
+            className="p-2 text-white bg-primary text-primary-foreground rounded-r-lg   w-10"
+            onClick={stop}
+          >
+            <IoMdSend size={22} />
+          </button>
+        </div>
+
       </form>
 
 
