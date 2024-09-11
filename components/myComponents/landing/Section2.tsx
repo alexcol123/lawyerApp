@@ -19,7 +19,8 @@ const LandingMain = () => {
         <div >
           <Button asChild variant={'destructive'} className="mt-2 mb-2">
             <div className="flex gap-2 items-center justify-center">
-              <a href="tel:+8044326474">Habla con Experto, Gratis </a>
+            <a href="tel:+18044326474">Habla con Experto, Gratis</a>
+           
               <FaPhone />
             </div>
           </Button>

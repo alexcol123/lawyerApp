@@ -29,6 +29,16 @@ export const preguntasFrequentes: PreguntaTypes[] = [
     respuesta: 'Para solicitar el permiso de permanencia temporal (Formulario I-131F) como cónyuge o hijastro no ciudadano de un ciudadano estadounidense, debe presentar la solicitud en línea con una tarifa de $580. No se aceptan formularios impresos; si se envía uno, será rechazado. Debe incluir documentación que demuestre que cumple con los requisitos de elegibilidad y cualquier factor adicional que desea que USCIS considere. Cada solicitante debe tener una cuenta en línea de USCIS. Los padres o tutores legales pueden crear una cuenta para sus hijos menores, o un cuidador principal puede asistir en la creación de la cuenta. Para más información sobre cómo crear una cuenta, visite la página correspondiente en el sitio web de USCIS.'
   },
 
+  {
+    pregunta: ' ¿Cuáles son los criterios de elegibilidad para el proceso Manteniendo a las Familias Unidas?',
+    respuesta: 'Para solicitar el permiso de permanencia temporal (Formulario I-131F) como cónyuge o hijastro no ciudadano de un ciudadano estadounidense, debe presentar la solicitud en línea con una tarifa de $580. No se aceptan formularios impresos; si se envía uno, será rechazado. Debe incluir documentación que demuestre que cumple con los requisitos de elegibilidad y cualquier factor adicional que desea que USCIS considere. Cada solicitante debe tener una cuenta en línea de USCIS. Los padres o tutores legales pueden crear una cuenta para sus hijos menores, o un cuidador principal puede asistir en la creación de la cuenta. Para más información sobre cómo crear una cuenta, visite la página correspondiente en el sitio web de USCIS.'
+  },
+
+  {
+    pregunta: ' ¿Otras Preguntas ?',
+    respuesta: 'Solo haz click en el boton de abajo (Habla Con Maria) y  ella respondera cualquier pregunta que tengas sobre el proceso de Manteniendo a las Familias Unidas.'
+  },
+
 
 ]
 
