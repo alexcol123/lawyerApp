@@ -113,7 +113,7 @@ function CitasCarousel() {
                   borderRadius: "0.5rem",
 
                 }}>
-                  <CardContent className="flex aspect-square items-center justify-center w-full z-50 ">
+                  <CardContent className="flex aspect-square items-center justify-center w-full z-50  ">
                     <div className=" 
                     w-full bg-destructive text-destructive-foreground border  py-2 font-medium rounded-xl  text-center
                     justify-center mt-auto 
@@ -130,8 +130,8 @@ function CitasCarousel() {
           ))}
 
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious  className="text-primary"/>
+        <CarouselNext className="text-primary"/>
       </Carousel>
     </div>
   )
