@@ -1,8 +1,14 @@
 import { SubmitButton } from "@/components/myComponents/form/Buttons"
 import FormContainer from "@/components/myComponents/form/FormContainer"
 import FormInput from "@/components/myComponents/form/FormInput"
-import ImageInputContainer from "@/components/myComponents/form/ImageInputContainer"
-import { fetchProfile, fetchProfileImage, updateProfileAction, updateProfileImageAction } from "@/utils/actions"
+import ImageInputContainer from "@/components/myComponents/form/ImageInputContainer copy"
+
+import { fetchProfile,
+  updateProfileAction,
+  updateProfileImageAction
+
+  // fetchProfileImage,  
+} from "@/utils/actions"
 
 const PerfilPage = async () => {
   const perfil = await fetchProfile()
@@ -15,7 +21,7 @@ const PerfilPage = async () => {
 
 
 
-        <ImageInputContainer
+<ImageInputContainer
           isProfile={true}
           multipleImages={false}
           inputName={'imagenPerfil'}
@@ -31,10 +37,16 @@ const PerfilPage = async () => {
 
             <FormInput type='text' name='nombre' label='nombre' defaultValue={perfil.nombre} />
             <FormInput type='text' name='apellido' label='apellido' defaultValue={perfil.apellido} />
-            <FormInput type='text' name='usuario' label='usuario' defaultValue={perfil.usuario} />
+  
+      
+            <FormInput type='tel' name='telefono' label='telefono (De Estados Unidos)' 
+            defaultValue={perfil.telefono} />
+
+            <FormInput type='text' name='email' label='email'
+                      defaultValue={perfil.email}  />
 
           </div>
-          <SubmitButton text='Update Profile' className='mt-8' />
+          <SubmitButton text='Actualizar Perfil' className='mt-8' />
         </FormContainer>
       </div>
     </section>

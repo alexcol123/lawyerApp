@@ -13,10 +13,11 @@ import { links } from '@/utils/links'
 
 import { Button } from '@/components/ui/button'
 
-import { SignedOut, SignedIn, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import { SignedOut, SignedIn, SignInButton, SignUpButton } from '@clerk/nextjs'
 import { auth } from '@clerk/nextjs/server'
 import { FaHome } from "react-icons/fa";
 import SignOutLink from './SignOutLink'
+import UserIcon from './UserIcon'
 
 function LinksDropdown() {
   const { userId } = auth()
@@ -29,7 +30,7 @@ function LinksDropdown() {
         <Button variant='outline' className='flex gap-4 max-w-[100px]'>
           <LuAlignLeft className='w-6 h-6' />
           <SignedIn>
-            <UserButton />
+          <UserIcon />
           </SignedIn>
 
         </Button>

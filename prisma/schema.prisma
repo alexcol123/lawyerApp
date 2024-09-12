@@ -17,7 +17,6 @@
 // For Stripe  webhook 
 //stripe listen --forward-to localhost:3000/api/stripe-webhook
 
-
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
@@ -27,16 +26,20 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
 model Perfil {
-  id           String   @id @default(uuid())
-  clerkId      String   @unique
-  nombre       String
-  apellido     String
-  usuario      String
-  email        String
-  imagenPerfil String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id      String @id @default(uuid())
+  clerkId String @unique
 
+  // Bellow email is the once used to signup with clerk
+  emailAtSignup String
+  imagenPerfil  String
 
+  nombre   String
+  apellido String
+  telefono String
+  email    String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

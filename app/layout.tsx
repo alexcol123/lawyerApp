@@ -60,7 +60,7 @@ export default function RootLayout({
             <main className='container py-10 '>
               <div className="mt-20">{children}</div>
             </main>
-      
+
           </Providers>
         </body>
       </html>

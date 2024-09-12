@@ -18,13 +18,15 @@ async function CreateProfile() {
 
   return (
     <section className="w-full">
-      <h1 className='text-2xl font-semibold mb-8 capitalize'>nuevo usuario</h1>
+      <h1 className='text-2xl font-semibold mb-8 capitalize'>nuevo usuario ( Porfavor Completa tu perfil para continuar )</h1>
       <div className='border p-8 rounded-md '>
         <FormContainer action={createProfileAction}>
           <div className='grid gap-4 md:grid-cols-2 mt-4 '>
             <FormInput type='text' name='nombre' label='nombre' />
             <FormInput type='text' name='apellido' label='apellido' />
-            <FormInput type='text' name='usuario' label='usuario' />
+            <FormInput type='tel' name='telefono' label='telefono (De Estados Unidos)' />
+            <FormInput type='text' name='email' label='email' />
+
           </div>
           <SubmitButton text='Create Profile' className='mt-8' />
         </FormContainer>
