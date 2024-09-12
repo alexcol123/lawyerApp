@@ -8,6 +8,7 @@ import Footer from "@/components/myComponents/landing/Footer"
 
 import Info from "@/components/myComponents/landing/Info"
 import Info2 from "@/components/myComponents/landing/Info2"
+import PorqueElegirnos from "@/components/myComponents/landing/PorqueElegirnos"
 import LandingMain from "@/components/myComponents/landing/Section2"
 
 
@@ -35,6 +36,9 @@ const HomePage = () => {
       </div>
 
 <Info2 />
+
+
+<PorqueElegirnos />
 
 <Footer />
 

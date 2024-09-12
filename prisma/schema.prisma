@@ -40,6 +40,96 @@ model Perfil {
   telefono String
   email    String
 
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  Aplicacion    Aplicacion[]
+  Documentacion Documentacion[]
+}
+
+model Aplicacion {
+  id      String @id @default(uuid())
+  clerkId String @unique
+
+  // Bellow email is the once used to signup with clerk
+  esSpouse    Boolean @default(true)
+  esStepchild Boolean @default(false)
+
+  applicantLegalName           String
+  applicantLegalNameotherNames String?
+
+  addressFisical String
+  addressMailing String?
+
+  phone String
+  email String
+
+  paisNacimiento   String
+  paisDeCiudadania String
+
+  sexo     String
+  etnicity String // 1. Hispanic or Latino 2. Not Hispanic or Latino
+
+  race String // 1.American Indian or Alaska Native 2. Asian 3. Black or African American 4. Native Hawaiian or Other Pacific Islander 5. White
+
+  height    String
+  weight    String
+  eyeColor  String
+  hairColor String
+
+  dateOfMarriage DateTime?
+
+  aNumber   String?
+  ssnNumber String?
+  haveI94   Boolean
+
+  spouseThatIsCitizenFullName String?
+  spouseThatIsCitizenDOB      String?
+  spouseThatIsCitizenSSN      String?
+
+  // voy aqui
+
+  applicantSSN String?
+
+  applicantWhenArrivedToUS String
+
+  applicantHasBeenDeported            Boolean @default(false)
+  applicantHasBeenDeportationOrder    Boolean @default(false)
+  applicantHasArrests                 Boolean @default(false)
+  applicantHasArrestsInOtherCountries Boolean @default(false)
+  applicantIsInvolvedInCrimes         Boolean @default(false)
+
+  applicantHsFiledI601a       Boolean   @default(false)
+  applicantHsFiledI601aNumber DateTime?
+
+  applicantCartaDeApprovacion String? // Carta de aprovacion de I-130 750 characteres or more
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  Perfil   Perfil? @relation(fields: [perfilId], references: [clerkId])
+  perfilId String?
+}
+
+model Documentacion {
+  id      String @id @default(uuid())
+  clerkId String @unique
+
+  // Bellow email is the once used to signup with clerk
+  aplicantIdImage  String
+  aplicantIdImage2 String?
+
+  spouseProofOfCitizenshipInUSA  String
+  spouseProofOfCitizenshipInUSA2 String?
+
+  proofOfRelationship  String
+  proofOfRelationship2 String?
+
+  spouseProofOfLivingInTheUSA10years String[]
+  spouseDispositionOfCrimes          String[]
+  spouseaditionalDocs                String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Perfil    Perfil?  @relation(fields: [perfilId], references: [clerkId], onDelete: Cascade)
+  perfilId  String?
 }

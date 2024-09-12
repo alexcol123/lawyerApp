@@ -70,7 +70,7 @@ export const createProfileAction = async (
     return renderError(error)
   }
 
-  redirect('/bienvenido')
+  redirect('/applicacion')
 }
 
 
@@ -163,4 +163,28 @@ export const fetchProfileImage = async () => {
 
   return perfil?.imagenPerfil
 
+}
+
+
+export const crearAplicacion = async (prevState: null, formData: FormData) => {
+  // const user = await getAuthUser()
+  try {
+    // const rawData = Object.fromEntries(formData)
+    // const validatedFields = validateWithZodSchema(aplicacionSchema, rawData)
+
+    // await db.aplicacion.create({
+    //   data: {
+    //     ...validatedFields,
+    //     perfil: {
+    //       connect: {
+    //         clerkId: user.id,
+    //       },
+    //     },
+    //   },
+    // })
+
+    return { message: 'Aplicacion creada exitosamente' }
+  } catch (error) {
+    return renderError(error)
+  }
 }

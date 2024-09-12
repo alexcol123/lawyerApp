@@ -4,14 +4,12 @@ import { Textarea } from '@/components/ui/textarea'
 type TextAreaInputProps = {
   name: string
   labelText?: string
+  placeholder?: string
   defaultValue?: string
 }
 
-function TextAreaInput({ name, labelText, defaultValue }: TextAreaInputProps) {
 
-  const tempDefaultDescription =
-
-    'En nuestra tienda encontrarás figuras de One Piece, Dragon Ball y Demon Slayer y mas, fabricadas con excelente calidad y gran atención al detalle. Cada figura captura perfectamente la esencia de tus personajes favoritos, desde sus expresiones hasta sus icónicos trajes. Ideales para coleccionistas y fans, estas figuras son perfectas para exhibir en tu estantería, escritorio o vitrina. Añade a tus héroes de anime a tu colección y revive sus épicas aventuras todos los días.'
+function TextAreaInput({ name, labelText, defaultValue, placeholder }: TextAreaInputProps) {
 
   return (
     <div className='mb-2'>
@@ -19,9 +17,10 @@ function TextAreaInput({ name, labelText, defaultValue }: TextAreaInputProps) {
         {labelText || name}
       </Label>
       <Textarea
+        placeholder={placeholder}
         id={name}
         name={name}
-        defaultValue={defaultValue || tempDefaultDescription}
+        defaultValue={defaultValue}
         rows={5}
         required
         className='leading-loose mt-1'

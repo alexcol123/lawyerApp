@@ -20,15 +20,16 @@ const FormSelect = ({ name, label, list, isColor = false, defaultValue }: { name
         {label || name}
       </Label>
       <Select
-       defaultValue={ defaultValue }
+        defaultValue={defaultValue}
         name={name}
         required
       >
         <SelectTrigger id={name} className="mt-1 ">
-          {/* <SelectValue placeholder="Select one" /> */}
           <SelectValue placeholder={`Selecciona una ${name}`} />
         </SelectTrigger>
         <SelectContent >
+
+
           {list.map((item: any) => {
             return (
               <SelectItem key={item.name} value={item.name}>
