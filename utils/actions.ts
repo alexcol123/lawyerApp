@@ -2,7 +2,7 @@
 
 
 import db from './db'
-import { imageSchema, profileSchema, validateWithZodSchema } from './schemas'
+import { aplicacionSchema, imageSchema, profileSchema, validateWithZodSchema } from './schemas'
 import { clerkClient, currentUser } from '@clerk/nextjs/server'
 
 import { revalidatePath } from 'next/cache'
@@ -70,7 +70,7 @@ export const createProfileAction = async (
     return renderError(error)
   }
 
-  redirect('/applicacion')
+  redirect('/aplicacion')
 }
 
 
@@ -156,10 +156,12 @@ export const fetchProfileImage = async () => {
   const user = await currentUser()
   if (!user) return null
 
-  const perfil = await db.perfil.findFirst({
+  const perfil = await db.perfil.findUnique({
     where: { clerkId: user.id },
     select: { imagenPerfil: true },
   })
+
+  if (!perfil) return null
 
   return perfil?.imagenPerfil
 
@@ -167,21 +169,31 @@ export const fetchProfileImage = async () => {
 
 
 export const crearAplicacion = async (prevState: null, formData: FormData) => {
-  // const user = await getAuthUser()
+  const user = await getAuthUser()
+
+
   try {
-    // const rawData = Object.fromEntries(formData)
-    // const validatedFields = validateWithZodSchema(aplicacionSchema, rawData)
+    const rawData = Object.fromEntries(formData)
+
+    console.log(rawData)
+
+
+     const validatedFields = validateWithZodSchema(aplicacionSchema, rawData)
+
+    // // console.log(rawData)
+    // // console.log('-------------------')
+ console.log(validatedFields)
+    // // console.log('===================')
+
 
     // await db.aplicacion.create({
     //   data: {
     //     ...validatedFields,
-    //     perfil: {
-    //       connect: {
-    //         clerkId: user.id,
-    //       },
-    //     },
+    //     perfilId: user.id,
     //   },
     // })
+
+
 
     return { message: 'Aplicacion creada exitosamente' }
   } catch (error) {

@@ -5,6 +5,8 @@ import Image from 'next/image'
 async function UserIcon() {
   const profileImage = await fetchProfileImage()
 
+ 
+
   if (profileImage)
     return (
       <Image src={profileImage} alt="Profile Image" width={50} height={50} className='w-6 h-6 rounded-full object-cover' />

@@ -1,7 +1,7 @@
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 
-type TextAreaInputProps = {
+type FormTextAreaInputProps = {
   name: string
   labelText?: string
   placeholder?: string
@@ -9,7 +9,7 @@ type TextAreaInputProps = {
 }
 
 
-function TextAreaInput({ name, labelText, defaultValue, placeholder }: TextAreaInputProps) {
+function FormTextAreaInput({ name, labelText, defaultValue, placeholder }: FormTextAreaInputProps) {
 
   return (
     <div className='mb-2'>
@@ -22,7 +22,7 @@ function TextAreaInput({ name, labelText, defaultValue, placeholder }: TextAreaI
         name={name}
         defaultValue={defaultValue}
         rows={5}
-        required
+        // required
         className='leading-loose mt-1'
       />
     </div>
@@ -30,6 +30,5 @@ function TextAreaInput({ name, labelText, defaultValue, placeholder }: TextAreaI
 }
 
 
-export default TextAreaInput
-
+export default FormTextAreaInput
 

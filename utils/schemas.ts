@@ -84,3 +84,26 @@ export const imageSchema = z.object({
   imagen5: z.optional(validateFile()),
   imagen6: z.optional(validateFile()),
 })
+
+
+export const aplicacionSchema = z.object({
+
+  applicantLegalName:
+    z.string()
+      .min(2, { message: 'El nombre debe tener al menos 2 caracteres.' })
+      .max(50, { message: 'El nombre debe tener menos de 50 caracteres.' }),
+
+  applicantLegalNameotherNames:
+    z.string()
+      .min(2, { message: 'El apellido debe tener al menos 2 caracteres.' })
+      .max(50, { message: 'El apellido debe tener menos de 50 caracteres.' }),
+
+  applicantDOB:
+    z.string().date("Fecha de nacimiento es requerida en este formato, 10/15/1995")
+
+
+
+
+
+})
+
