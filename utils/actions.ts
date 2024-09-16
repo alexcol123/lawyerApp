@@ -174,29 +174,41 @@ export const crearPreAplicacion = async (prevState: null, formData: FormData) =>
 
   try {
     const rawData = Object.fromEntries(formData)
+    const validatedFields = validateWithZodSchema(preAplicacionSchema, rawData)
 
-    console.log(rawData)
+    const alreadyExists = await db.preAplicacion.findFirst({
+      where: {
+        perfilId: user.id,
+      },
+    })
+
+    if (alreadyExists) {
+      return { message: 'Ya has completado una aplicacion' }
+    }
+
+    await db.preAplicacion.create({
+      data: {
+        ...validatedFields,
+        perfilId: user.id,
+      },
+    })
 
 
-     const validatedFields = validateWithZodSchema(preAplicacionSchema, rawData)
-
-    // // console.log(rawData)
-    // // console.log('-------------------')
- console.log(validatedFields)
-    // // console.log('===================')
-
-
-    // await db.aplicacion.create({
-    //   data: {
-    //     ...validatedFields,
-    //     perfilId: user.id,
-    //   },
-    // })
-
-
-
-    return { message: 'Aplicacion creada exitosamente' }
   } catch (error) {
     return renderError(error)
   }
+
+  redirect('/mi-aplicacion')
+}
+
+export const getUnaAplicacion = async () => {
+  const user = await getAuthUser()
+
+  const aplicacion = await db.preAplicacion.findFirst({
+    where: {
+      perfilId: user.id,
+    },
+  })
+
+  return aplicacion
 }

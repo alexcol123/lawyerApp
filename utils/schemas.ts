@@ -171,10 +171,8 @@ export const preAplicacionSchema = z.object({
       .max(70, { message: 'El Apellido es requrido y debe tener al maximo de 70 caracteres' }),
 
   applicantDOB:
-    z.string().date().refine((val) => {
-      const date = new Date(val)
-      return date < new Date()
-    }, 'Fecha de Nacimiento es requerida, y no puede ser una fecha futura'),
+    z.coerce.date({ message: 'Fecha de Nacimiento es requerida' }),
+
 
   addressFisical:
     z.string({ message: 'La dirección es requerida' }),
@@ -203,32 +201,25 @@ export const preAplicacionSchema = z.object({
     z.string({ message: 'La raza es requerida' }),
 
 
-  dateOfMarriage: z.string().date().refine((val) => {
-    const date = new Date(val)
-    return date < new Date()
-  }, 'Fecha en que se caso es requerida, y no puede ser en el futuro'),
+  dateOfMarriage: z.coerce.date({ message: 'Fecha de Matrimonio es requerida' }),
+
+  esSpouse: z.coerce.boolean().optional(),  
+  esStepchild: z.coerce.boolean().optional(),  
 
 
-  esSpouse: z.boolean().optional(),
-  esStepchild: z.boolean().optional(),
+  spouseThatIsCitizenLegalFirstName: z.string(),
+  spouseThatIsCitizenLegalMiddleName: z.string().optional(),
+  spouseThatIsCitizenLegalLastName: z.string(),
 
-
-  spouseThatIsCitizenFullName: z.string().optional(),
-  spouseThatIsCitizenDOB: z.string().date().refine((val) => {
-    const date = new Date(val)
-    return date < new Date()
-  }, 'Fecha de Nacimiento del Esposo/a Ciudadano americano es requerido'),
-
+  spouseThatIsCitizenDOB: z.coerce.date({ message: 'Fecha de Nacimiento del Esposo/a es requerido' }),
 
   applicantWhenArrivedToUS:
-    z.string().date().refine((val) => {
-      const date = new Date(val)
-      return date < new Date()
-    }, 'Fecha de llegada a Estados Unidos es requerida, y no puede ser en el futuro'),
+    z.coerce.date({ message: 'Fecha de Llegada a los Estados Unidos, es requerida' }),
 
-  applicantHasBeenDeported: z.boolean().optional(),
-  applicantHasArrests: z.boolean().optional(),
-  applicantHasArrestsInOtherCountries: z.boolean().optional(),
+  applicantHasBeenDeported: z.coerce.boolean().optional(),  
+
+  applicantHasArrests: z.coerce.boolean().optional(),  
+  applicantHasArrestsInOtherCountries: z.coerce.boolean().optional(),  
 
   applicantOtherInfo: z.string().optional(),
 
@@ -315,7 +306,7 @@ export const preAplicacionSchema = z.object({
 
 //   aNumber: z.string().optional(),
 //   ssnNumber: z.string().optional(),
-//   haveI94: z.boolean().optional(),
+//   haveI94: z.coerce.boolean().optional(),  
 
 //   spouseThatIsCitizenFullName: z.string().optional(),
 //   spouseThatIsCitizenDOB: z.string().date().refine((val) => {
@@ -332,13 +323,13 @@ export const preAplicacionSchema = z.object({
 //       return date < new Date()
 //     }, 'Fecha de llegada a Estados Unidos es requerida, y no puede ser en el futuro'),
 
-//   applicantHasBeenDeported: z.boolean().optional(),
-//   applicantHasBeenDeportationOrder: z.boolean().optional(),
-//   applicantHasArrests: z.boolean().optional(),
-//   applicantHasArrestsInOtherCountries: z.boolean().optional(),
-//   applicantIsInvolvedInCrimes: z.boolean().optional(),
+//   applicantHasBeenDeported: z.coerce.boolean().optional(),  
+//   applicantHasBeenDeportationOrder: z.coerce.boolean().optional(),  
+//   applicantHasArrests: z.coerce.boolean().optional(),  
+//   applicantHasArrestsInOtherCountries: z.coerce.boolean().optional(),  
+//   applicantIsInvolvedInCrimes: z.coerce.boolean().optional(),  
 
-//   applicantHsFiledI601a: z.boolean().optional(),
+//   applicantHsFiledI601a: z.coerce.boolean().optional(),  
 //   applicantHsFiledI601aNumber: z.string().date().optional(),
 
 //   applicantCartaDeApprovacion: z.string().optional(),

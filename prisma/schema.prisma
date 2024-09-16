@@ -43,7 +43,6 @@ model Perfil {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  aplicaciones  Aplicacion[]
   PreAplicacion PreAplicacion[]
 }
 
@@ -75,8 +74,10 @@ model PreAplicacion {
   esSpouse    Boolean @default(true)
   esStepchild Boolean @default(false)
 
-  spouseThatIsCitizenFullName String
-  spouseThatIsCitizenDOB      String
+  spouseThatIsCitizenLegalFirstName  String
+  spouseThatIsCitizenLegalMiddleName String?
+  spouseThatIsCitizenLegalLastName   String
+  spouseThatIsCitizenDOB             DateTime
 
   applicantWhenArrivedToUS DateTime?
 
@@ -93,68 +94,68 @@ model PreAplicacion {
   perfilId String
 }
 
-model Aplicacion {
-  id String @id @default(uuid())
+// model Aplicacion {
+//   id String @id @default(uuid())
 
-  // Bellow email is the once used to signup with clerk
-  // esSpouse    Boolean @default(true)
-  // esStepchild Boolean @default(false)
+//   // Bellow email is the once used to signup with clerk
+//   // esSpouse    Boolean @default(true)
+//   // esStepchild Boolean @default(false)
 
-  applicantLegalName String
+//   applicantLegalName String
 
-  applicantLegalNameotherNames String?
-  applicantDOB                 DateTime?
+//   applicantLegalNameotherNames String?
+//   applicantDOB                 DateTime?
 
-  addressFisical String
-  addressMailing String?
+//   addressFisical String
+//   addressMailing String?
 
-  phone String
-  email String?
+//   phone String
+//   email String?
 
-  paisNacimiento   String?
-  paisDeCiudadania String?
+//   paisNacimiento   String?
+//   paisDeCiudadania String?
 
-  sexo     String
-  etnicity String // 1. Hispanic or Latino 2. Not Hispanic or Latino
+//   sexo     String
+//   etnicity String // 1. Hispanic or Latino 2. Not Hispanic or Latino
 
-  race String // 1.American Indian or Alaska Native 2. Asian 3. Black or African American 4. Native Hawaiian or Other Pacific Islander 5. White
+//   race String // 1.American Indian or Alaska Native 2. Asian 3. Black or African American 4. Native Hawaiian or Other Pacific Islander 5. White
 
-  height    String?
-  weight    String?
-  eyeColor  String?
-  hairColor String?
+//   height    String?
+//   weight    String?
+//   eyeColor  String?
+//   hairColor String?
 
-  dateOfMarriage DateTime?
+//   dateOfMarriage DateTime?
 
-  aNumber   String?
-  ssnNumber String?
-  haveI94   Boolean?
+//   aNumber   String?
+//   ssnNumber String?
+//   haveI94   Boolean?
 
-  spouseThatIsCitizenFullName String?
-  spouseThatIsCitizenDOB      String?
-  spouseThatIsCitizenSSN      String?
+//   spouseThatIsCitizenFullName String?
+//   spouseThatIsCitizenDOB      String?
+//   spouseThatIsCitizenSSN      String?
 
-  applicantSSN String?
+//   applicantSSN String?
 
-  applicantWhenArrivedToUS DateTime?
+//   applicantWhenArrivedToUS DateTime?
 
-  applicantHasBeenDeported            Boolean @default(false)
-  applicantHasBeenDeportationOrder    Boolean @default(false)
-  applicantHasArrests                 Boolean @default(false)
-  applicantHasArrestsInOtherCountries Boolean @default(false)
-  applicantIsInvolvedInCrimes         Boolean @default(false)
+//   applicantHasBeenDeported            Boolean @default(false)
+//   applicantHasBeenDeportationOrder    Boolean @default(false)
+//   applicantHasArrests                 Boolean @default(false)
+//   applicantHasArrestsInOtherCountries Boolean @default(false)
+//   applicantIsInvolvedInCrimes         Boolean @default(false)
 
-  applicantHsFiledI601a       Boolean   @default(false)
-  applicantHsFiledI601aNumber DateTime?
+//   applicantHsFiledI601a       Boolean   @default(false)
+//   applicantHsFiledI601aNumber DateTime?
 
-  applicantCartaDeApprovacion String? // Carta de aprovacion de I-130 750 characteres or more
+//   applicantCartaDeApprovacion String? // Carta de aprovacion de I-130 750 characteres or more
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
 
-  Perfil   Perfil @relation(fields: [perfilId], references: [clerkId])
-  perfilId String
-}
+//   Perfil   Perfil @relation(fields: [perfilId], references: [clerkId])
+//   perfilId String
+// }
 
 // model Documentacion {
 //   id String @id @default(uuid())

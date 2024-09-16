@@ -9,6 +9,7 @@ type FormInputProps = {
   label?: string
   defaultValue?: string
   placeholder?: string
+  required?: boolean
 }
 
 function FormInput({
@@ -17,6 +18,7 @@ function FormInput({
   type = 'text',
   defaultValue,
   placeholder,
+  required = true,
 }: FormInputProps) {
   return (
     <div className='mb-2'>
@@ -29,7 +31,7 @@ function FormInput({
         type={type}
         defaultValue={defaultValue}
         placeholder={placeholder}
-         required
+        required={required}
         className='mt-1'
       />
     </div>

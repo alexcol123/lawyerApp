@@ -6,10 +6,11 @@ type FormTextAreaInputProps = {
   labelText?: string
   placeholder?: string
   defaultValue?: string
+  required?: boolean
 }
 
 
-function FormTextAreaInput({ name, labelText, defaultValue, placeholder }: FormTextAreaInputProps) {
+function FormTextAreaInput({ name, labelText, defaultValue, placeholder, required = true }: FormTextAreaInputProps) {
 
   return (
     <div className='mb-2'>
@@ -22,7 +23,7 @@ function FormTextAreaInput({ name, labelText, defaultValue, placeholder }: FormT
         name={name}
         defaultValue={defaultValue}
         rows={5}
-        // required
+         required={required}
         className='leading-loose mt-1'
       />
     </div>

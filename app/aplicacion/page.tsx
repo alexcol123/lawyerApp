@@ -43,7 +43,8 @@ const AplicacionPage = () => {
             <FormInput
               name="applicantLegalMiddleName"
               type="text"
-              label="Segundo Nombre (Si tienes)"
+              required={false}
+              label="Segundo Nombre (opcional)"
               placeholder="Ej: Isabel"
             />
 
@@ -151,20 +152,35 @@ const AplicacionPage = () => {
 
           <Separator orientation="horizontal" className="my-6" />
 
-          <h1 className="text-primary font-semibold my-3">Información del Ciudadano Americano</h1>
+          <h1 className="text-primary font-semibold my-3">Información de Tu Cónyuge que es Ciudadano Americano</h1>
 
           <div className="grid md:grid-cols-2 gap-8 mb-4">
             <FormInput
-              name="spouseThatIsCitizenFullName"
+              name="spouseThatIsCitizenLegalFirstName"
               type="text"
-              label="Nombre Completo de tu Cónyuge Ciudadano Americano"
-              placeholder="Ej: Michael James Smith"
+              label="Nombre de tu Cónyuge "
+              placeholder="Ej: James"
+            />
+
+            <FormInput
+              name="spouseThatIsCitizenLegalMiddleName"
+              type="text"
+              required={false}
+              label="Segundo Nombre de tu Cónyuge (opcional)  "
+              placeholder="Ej: Steven "
+            />
+
+            <FormInput
+              name="spouseThatIsCitizenLegalLastName"
+              type="text"
+              label="Apellido de tu Cónyuge (opcional) "
+              placeholder="Ej: Smith"
             />
 
             <FormInput
               name="spouseThatIsCitizenDOB"
               type="date"
-              label="Fecha de Nacimiento de tu Cónyuge Ciudadano Americano"
+              label="Fecha de Nacimiento de tu Cónyuge"
               placeholder="Ej: 15 de julio de 1980"
             />
           </div>
@@ -177,6 +193,7 @@ const AplicacionPage = () => {
             name="applicantOtherInfo"
             labelText="Carta de Explicación (No es requerida)"
             placeholder="Si tienes alguna información adicional que creas importante para tu aplicación, escríbela aquí. Por ejemplo, si tienes arrestos, enfermedades, si tu cónyuge ha fallecido, si tienes hijos menores, etc. Si no crees que haya nada, déjalo en blanco."
+            required={false}
           />
 
           <div className="flex items-center justify-center w-full">
