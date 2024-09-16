@@ -6,7 +6,7 @@ import FormSelect from "@/components/myComponents/form/FormSelect"
 import FormTextAreaInput from "@/components/myComponents/form/FormTextAreaInput"
 import { Separator } from "@/components/ui/separator"
 
-import { crearAplicacion } from "@/utils/actions"
+import { crearPreAplicacion } from "@/utils/actions"
 
 
 
@@ -31,7 +31,7 @@ const AplicacionPage = () => {
 
       <div className="border rounded-xl mt-14 p-4">
 
-        <FormContainer action={crearAplicacion}>
+        <FormContainer action={crearPreAplicacion}>
 
           <h1 className="text-primary font-semibold my-3">Informacion del applicante</h1>
 

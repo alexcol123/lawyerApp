@@ -29,7 +29,7 @@ function FormInput({
         type={type}
         defaultValue={defaultValue}
         placeholder={placeholder}
-        // required
+         required
         className='mt-1'
       />
     </div>

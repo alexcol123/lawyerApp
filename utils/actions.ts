@@ -2,7 +2,7 @@
 
 
 import db from './db'
-import { aplicacionSchema, imageSchema, profileSchema, validateWithZodSchema } from './schemas'
+import { imageSchema, preAplicacionSchema, profileSchema, validateWithZodSchema } from './schemas'
 import { clerkClient, currentUser } from '@clerk/nextjs/server'
 
 import { revalidatePath } from 'next/cache'
@@ -168,7 +168,7 @@ export const fetchProfileImage = async () => {
 }
 
 
-export const crearAplicacion = async (prevState: null, formData: FormData) => {
+export const crearPreAplicacion = async (prevState: null, formData: FormData) => {
   const user = await getAuthUser()
 
 
@@ -178,7 +178,7 @@ export const crearAplicacion = async (prevState: null, formData: FormData) => {
     console.log(rawData)
 
 
-     const validatedFields = validateWithZodSchema(aplicacionSchema, rawData)
+     const validatedFields = validateWithZodSchema(preAplicacionSchema, rawData)
 
     // // console.log(rawData)
     // // console.log('-------------------')

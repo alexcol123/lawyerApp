@@ -43,7 +43,54 @@ model Perfil {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  aplicaciones Aplicacion[]
+  aplicaciones  Aplicacion[]
+  PreAplicacion PreAplicacion[]
+}
+
+model PreAplicacion {
+  id String @id @default(uuid())
+
+  // Bellow email is the once used to signup with clerk
+  // esSpouse    Boolean @default(true)
+  // esStepchild Boolean @default(false)
+
+  applicantLegalFirstName  String
+  applicantLegalMiddleName String?
+  applicantLegalLastName   String
+  applicantDOB             DateTime
+
+  addressFisical String
+
+  phone String
+  email String
+
+  paisNacimiento String
+
+  sexo     String
+  etnicity String // 1. Hispanic or Latino 2. Not Hispanic or Latino
+  race     String // 1.American Indian or Alaska Native 2. Asian 3. Black or African American 4. Native Hawaiian or Other Pacific Islander 5. White
+
+  dateOfMarriage DateTime?
+
+  esSpouse    Boolean @default(true)
+  esStepchild Boolean @default(false)
+
+  spouseThatIsCitizenFullName String
+  spouseThatIsCitizenDOB      String
+
+  applicantWhenArrivedToUS DateTime?
+
+  applicantHasBeenDeported            Boolean @default(false)
+  applicantHasArrests                 Boolean @default(false)
+  applicantHasArrestsInOtherCountries Boolean @default(false)
+
+  applicantOtherInfo String? // Carta de aprovacion de I-130 750 characteres or more
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Perfil   Perfil @relation(fields: [perfilId], references: [clerkId])
+  perfilId String
 }
 
 model Aplicacion {
@@ -96,8 +143,6 @@ model Aplicacion {
   applicantHasArrests                 Boolean @default(false)
   applicantHasArrestsInOtherCountries Boolean @default(false)
   applicantIsInvolvedInCrimes         Boolean @default(false)
-
-  // voy aqui
 
   applicantHsFiledI601a       Boolean   @default(false)
   applicantHsFiledI601aNumber DateTime?

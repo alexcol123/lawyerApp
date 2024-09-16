@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_US",
+
     // url: "https://turo-rentals.vercel.app/",
     title: "Latino Inmigración | Servicios Migratorios para la Comunidad Latina en los Estados Unidos",
     description: "Facilitamos el ajuste de estatus migratorio para latinos en los Estados Unidos con un proceso económico y rápido. Obtén el apoyo que necesitas para completar tus planillas migratorias.",

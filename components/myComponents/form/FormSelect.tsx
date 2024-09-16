@@ -9,8 +9,12 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
+type ListType = {
+  name: string,
+}
 
-const FormSelect = ({ name, label, list, isColor = false, defaultValue }: { name: string, label?: string, list: any, defaultValue?: any, isColor?: boolean }) => {
+
+const FormSelect = ({ name, label, list, defaultValue }: { name: string, label?: string, list: ListType[], defaultValue?: string }) => {
 
 
 
@@ -23,6 +27,7 @@ const FormSelect = ({ name, label, list, isColor = false, defaultValue }: { name
         defaultValue={defaultValue}
         name={name}
         required
+
       >
         <SelectTrigger id={name} className="mt-1 ">
           <SelectValue placeholder={`Selecciona una ${name}`} />
@@ -30,13 +35,14 @@ const FormSelect = ({ name, label, list, isColor = false, defaultValue }: { name
         <SelectContent >
 
 
-          {list.map((item: any) => {
+          {list.map((item: ListType) => {
+
+            console.log(item)
             return (
               <SelectItem key={item.name} value={item.name}>
                 <span className=' flex items-center justify-around gap-12 '>
                   {item.name}
-                  {isColor && <div className="h-6 w-6 rounded-full border " style={{ backgroundColor: `${item.value}` }}>
-                  </div>}
+
                 </span>
               </SelectItem>
             )
