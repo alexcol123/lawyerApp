@@ -1,110 +1,136 @@
-import { getUnaAplicacion } from "@/utils/actions"
-import { formatDate } from "@/utils/format"
 
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getUnaAplicacion } from "@/utils/actions";
+import { formatDate } from "@/utils/format";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
 import { CalendarIcon } from "lucide-react";
-
-
-
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const MiAplicacion = async () => {
 
-  const application = await getUnaAplicacion()
-  console.log(application)
+  const application = await getUnaAplicacion();
 
-  if (!application) return <div>No hay aplicaciones</div>
+  console.log(application);
+
+  if (!application) return <div className="min-h-screen flex items-center justify-center text-muted-foreground">No hay aplicaciones</div>;
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <Card className="shadow-lg max-w-xl w-full">
-        <CardHeader>
-          <CardTitle className="text-center text-3xl font-semibold">Información de tu Aplicación</CardTitle>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 dark:from-background dark:to-muted flex items-center justify-center p-6">
+      <Card className="shadow-2xl border border-border rounded-xl max-w-xl w-full bg-card dark:bg-card">
+        <CardHeader className="">
+          <CardTitle className="text-center text-4xl font-bold text-primary dark:text-primary-foreground">Tu Aplicación</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2 text-lg">
-            <div><strong>Nombre: </strong>{application.applicantLegalFirstName} {application.applicantLegalMiddleName} {application.applicantLegalLastName}</div>
-            <div className="flex items-center">
-              <strong>Fecha de Nacimiento: </strong>
-              <span className="ml-2">{formatDate(application.applicantDOB)}</span>
-              <CalendarIcon className="ml-1 text-gray-500 w-4 h-4" />
+        <CardContent className="space-y-6 p-6 border m-3 rounded-xl">
+          <div className="space-y-4 text-lg text-foreground dark:text-card-foreground">
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Nombre: </strong>
+              <span className="block sm:inline">{application.applicantLegalFirstName} {application.applicantLegalMiddleName} {application.applicantLegalLastName}</span>
             </div>
-            <div><strong>Dirección: </strong>{application.addressFisical}</div>
-            <div><strong>Teléfono: </strong>{application.phone}</div>
-            <div><strong>Email: </strong>{application.email}</div>
-            <div><strong>País de Nacimiento: </strong>{application.paisNacimiento}</div>
-            <div><strong>Sexo: </strong>{application.sexo}</div>
-            <div><strong>Origen étnico: </strong>{application.etnicity}</div>
-            <div><strong>Raza: </strong>{application.race}</div>
-            {application.dateOfMarriage && (
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Fecha de Nacimiento: </strong>
               <div className="flex items-center">
+                <span>{formatDate(application.applicantDOB)}</span>
+                <CalendarIcon className="ml-2 text-muted-foreground w-5 h-5" />
+              </div>
+            </div>
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Dirección: </strong>
+              <span className="block sm:inline">{application.addressFisical}</span>
+            </div>
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Teléfono: </strong>
+              <span className="block sm:inline">{application.phone}</span>
+            </div>
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Email: </strong>
+              <span className="block sm:inline">{application.email}</span>
+            </div>
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>País de Nacimiento: </strong>
+              <span className="block sm:inline">{application.paisNacimiento}</span>
+            </div>
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Sexo: </strong>
+              <span className="block sm:inline">{application.sexo}</span>
+            </div>
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Origen étnico: </strong>
+              <span className="block sm:inline">{application.etnicity}</span>
+            </div>
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Raza: </strong>
+              <span className="block sm:inline">{application.race}</span>
+            </div>
+            {application.dateOfMarriage && (
+              <div className="block sm:flex sm:items-center sm:justify-between">
                 <strong>Fecha de Matrimonio: </strong>
-                <span className="ml-2">{formatDate(application.dateOfMarriage)}</span>
-                <CalendarIcon className="ml-1 text-gray-500 w-4 h-4" />
+                <div className="flex items-center">
+                  <span>{formatDate(application.dateOfMarriage)}</span>
+                  <CalendarIcon className="ml-2 text-muted-foreground w-5 h-5" />
+                </div>
               </div>
             )}
-            <div><strong>Esposo Ciudadano: </strong>{application.spouseThatIsCitizenLegalFirstName} {application.spouseThatIsCitizenLegalMiddleName} {application.spouseThatIsCitizenLegalLastName}</div>
-            <div className="flex items-center">
+
+
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Esposo Ciudadano: </strong>
+              <span className="block sm:inline">{application.spouseThatIsCitizenLegalFirstName} {application.spouseThatIsCitizenLegalMiddleName} {application.spouseThatIsCitizenLegalLastName}</span>
+            </div>
+            <div className="block sm:flex sm:items-center sm:justify-between">
               <strong>Fecha de Nacimiento del Esposo/a: </strong>
-              <span className="ml-2">{formatDate(application.spouseThatIsCitizenDOB)}</span>
-              <CalendarIcon className="ml-1 text-gray-500 w-4 h-4" />
+              <div className="flex items-center">
+                <span>{formatDate(application.spouseThatIsCitizenDOB)}</span>
+                <CalendarIcon className="ml-2 text-muted-foreground w-5 h-5" />
+              </div>
             </div>
             {application.applicantWhenArrivedToUS && (
-              <div className="flex items-center">
+              <div className="block sm:flex sm:items-center sm:justify-between">
                 <strong>Fecha de Llegada a EE.UU.: </strong>
-                <span className="ml-2">{formatDate(application.applicantWhenArrivedToUS)}</span>
-                <CalendarIcon className="ml-1 text-gray-500 w-4 h-4" />
+                <div className="flex items-center">
+                  <span>{formatDate(application.applicantWhenArrivedToUS)}</span>
+                  <CalendarIcon className="ml-2 text-muted-foreground w-5 h-5" />
+                </div>
               </div>
             )}
-            <div><strong>Deportado Anteriormente: </strong><Badge>{application.applicantHasBeenDeported ? 'Sí' : 'No'}</Badge></div>
-            <div><strong>Arrestos: </strong><Badge>{application.applicantHasArrests ? 'Sí' : 'No'}</Badge></div>
+
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Casado con Ciudadano: </strong>
+              <Badge variant="destructive" className="bg-destructive/20 text-destructive">{application.esSpouse ? 'Sí' : 'No'}</Badge>
+            </div>
+
+            {application.esSpouse === false && (
+              <div className="block sm:flex sm:items-center sm:justify-between">
+                <strong>Hijastro de un  Ciudadano: </strong>
+                <Badge variant="destructive" className="bg-destructive/20 text-destructive">{application.esSpouse ? 'Sí' : 'No'}</Badge>
+              </div>
+            )}
+
+
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Deportado Anteriormente: </strong>
+              <Badge variant="destructive" className="bg-destructive/20 text-destructive">{application.applicantHasBeenDeported ? 'Sí' : 'No'}</Badge>
+            </div>
+            <div className="block sm:flex sm:items-center sm:justify-between">
+              <strong>Arrestos: </strong>
+              <Badge variant="outline" className="bg-muted text-muted-foreground">{application.applicantHasArrests ? 'Sí' : 'No'}</Badge>
+            </div>
           </div>
         </CardContent>
+
+        <CardFooter className="flex flex-col my-8">
+
+          <div className="flex justify-around items-center mt-4  w-full">
+            <Button variant="outline">Editar</Button>
+            <Button>
+              <Link href="/resultado">Procesar</Link>
+            </Button>
+          </div>
+        </CardFooter>
       </Card>
     </div>
-  )
-}
-export default MiAplicacion
+  );
+};
 
-
-// const MiAplicacion = async () => {
-
-//   const application = await getUnaAplicacion()
-//   console.log(application)
-
-//   if (!application) return <div>No hay aplicaciones</div>
-
-
-//   return (
-//     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-//       <div className="bg-white shadow-md rounded-lg p-8 max-w-lg w-full">
-//         <h1 className="text-2xl font-bold mb-4">Información de la Aplicación</h1>
-//         <div className="space-y-2">
-//           <div><strong>Nombre: </strong>{application.applicantLegalFirstName} {application.applicantLegalMiddleName} {application.applicantLegalLastName}</div>
-//           <div><strong>Fecha de Nacimiento: </strong>{formatDate(application.applicantDOB)}</div>
-//           <div><strong>Dirección: </strong>{application.addressFisical}</div>
-//           <div><strong>Teléfono: </strong>{application.phone}</div>
-//           <div><strong>Email: </strong>{application.email}</div>
-//           <div><strong>País de Nacimiento: </strong>{application.paisNacimiento}</div>
-//           <div><strong>Sexo: </strong>{application.sexo}</div>
-//           <div><strong>Origen étnico: </strong>{application.etnicity}</div>
-//           <div><strong>Raza: </strong>{application.race}</div>
-//           {application.dateOfMarriage && <div><strong>Fecha de Matrimonio: </strong>{formatDate(application.dateOfMarriage)}</div>}
-//           <div><strong>Esposo Ciudadano: </strong>{application.spouseThatIsCitizenLegalFirstName} {application.spouseThatIsCitizenLegalMiddleName} {application.spouseThatIsCitizenLegalLastName}</div>
-//           <div><strong>Fecha de Nacimiento del Esposo/a: </strong>{formatDate(application.spouseThatIsCitizenDOB)}</div>
-
-//           {application.applicantWhenArrivedToUS && <div><strong>Fecha de Llegada a EE.UU.: </strong>{formatDate(application.applicantWhenArrivedToUS)}</div>}
-
-
-//           {/* <div><strong>Fecha de Llegada a EE.UU.: </strong>{application.applicantWhenArrivedToUS}</div> */}
-//           <div><strong>Deportado Anteriormente: </strong>{application.applicantHasBeenDeported ? 'Sí' : 'No'}</div>
-//           <div><strong>Arrestos: </strong>{application.applicantHasArrests ? 'Sí' : 'No'}</div>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
-// export default MiAplicacion
-
+export default MiAplicacion;

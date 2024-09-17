@@ -203,8 +203,8 @@ export const preAplicacionSchema = z.object({
 
   dateOfMarriage: z.coerce.date({ message: 'Fecha de Matrimonio es requerida' }),
 
-  esSpouse: z.coerce.boolean().optional(),  
-  esStepchild: z.coerce.boolean().optional(),  
+  esSpouse: z.coerce.boolean().optional(),
+  esStepchild: z.coerce.boolean().optional(),
 
 
   spouseThatIsCitizenLegalFirstName: z.string(),
@@ -216,10 +216,10 @@ export const preAplicacionSchema = z.object({
   applicantWhenArrivedToUS:
     z.coerce.date({ message: 'Fecha de Llegada a los Estados Unidos, es requerida' }),
 
-  applicantHasBeenDeported: z.coerce.boolean().optional(),  
+  applicantHasBeenDeported: z.coerce.boolean().optional(),
 
-  applicantHasArrests: z.coerce.boolean().optional(),  
-  applicantHasArrestsInOtherCountries: z.coerce.boolean().optional(),  
+  applicantHasArrests: z.coerce.boolean().optional(),
+  applicantHasArrestsInOtherCountries: z.coerce.boolean().optional(),
 
   applicantOtherInfo: z.string().optional(),
 

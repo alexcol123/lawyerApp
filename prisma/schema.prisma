@@ -69,7 +69,7 @@ model PreAplicacion {
   etnicity String // 1. Hispanic or Latino 2. Not Hispanic or Latino
   race     String // 1.American Indian or Alaska Native 2. Asian 3. Black or African American 4. Native Hawaiian or Other Pacific Islander 5. White
 
-  dateOfMarriage DateTime?
+  dateOfMarriage DateTime
 
   esSpouse    Boolean @default(true)
   esStepchild Boolean @default(false)
@@ -79,7 +79,7 @@ model PreAplicacion {
   spouseThatIsCitizenLegalLastName   String
   spouseThatIsCitizenDOB             DateTime
 
-  applicantWhenArrivedToUS DateTime?
+  applicantWhenArrivedToUS DateTime
 
   applicantHasBeenDeported            Boolean @default(false)
   applicantHasArrests                 Boolean @default(false)
