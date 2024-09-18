@@ -9,7 +9,7 @@ import { type actionFunction } from '@/utils/types'
 
 import { Button } from '@/components/ui/button'
 import { FaMinus, FaPlus } from 'react-icons/fa'
-import { Input } from '@/components/ui/input'
+
 
 type MultipleImageInputContainerProps = {
   name?: string
