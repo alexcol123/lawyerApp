@@ -117,14 +117,13 @@
 
 
 import { getUnaAplicacion } from "@/utils/actions";
-import { formatDate } from "@/utils/format";
+
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CalendarIcon, Check } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { FaCheck } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
+
 import { Separator } from "@/components/ui/separator";
 
 
@@ -161,9 +160,9 @@ const VerResultado = async () => {
 
   let califaca = true
 
-  // if (total === 0) {
-  //   califaca = true
-  // } else { califaca = false }
+  if (total === 0) {
+    califaca = true
+  } else { califaca = false }
 
 
 
@@ -241,34 +240,43 @@ const VerResultado = async () => {
               {califaca ? (
                 <div>
                   <p className="mb-8 text-center">
-                    Has calificado para el programa de Familias Unidas, y ahora estás a un paso más cerca de obtener tu legalización en los Estados Unidos. Nosotros estamos aquí para ayudarte a hacer este sueño realidad. Nuestro equipo de expertos legales se encargará de todo por ti: desde llenar tu documentación hasta traducir tus documentos. <br />
-                    No pierdas esta oportunidad de transformar tu vida.
+                    ¡Felicidades! Has calificado para el programa de Familias Unidas, y estás a un paso de lograr tu legalización en los Estados Unidos. Nosotros estamos aquí para que ese sueño se haga realidad. Nuestro equipo de expertos legales se encargará de todo por ti: desde la preparación de tu documentación hasta la traducción de tus documentos. <br />
+                    Esta es tu oportunidad para cambiar tu vida.
                     <br />
-                    <br />
-                    <strong>¡Da el primer paso hacia un futuro mejor!</strong>
-                
+                    <strong>¡Da el primer paso hacia un futuro lleno de oportunidades!</strong>
                   </p>
 
                   <ul className="list-disc list-inside">
-                  <p className="font-bold">Lo Que aremos por ti</p>
+                    <p className="font-bold">Esto haremos por ti:</p>
                     <li>Traducción de documentos</li>
                     <li>Redacción de cartas explicativas</li>
-                    <li>Revisión de documentos</li>
-                    <li>Asesoramiento legal</li>
+                    <li>Revisión detallada de documentos</li>
+                    <li>Asesoramiento legal especializado</li>
                   </ul>
-
 
                   <ul className="list-disc list-inside mt-10">
-                  <p className="font-bold">Recurda al legalizarte podras</p>
-                    <li>Ganar mas dinero</li>
-                    <li>Obtener un mejor trabajo</li>
-                    <li>Viajar a tu pais a ver a tu familia</li>
+                    <p className="font-bold">Con tu legalización podrás:</p>
+                    <li>Aumentar tus ingresos</li>
+                    <li>Acceder a mejores oportunidades laborales</li>
+                    <li>Visitar a tu familia en tu país</li>
                     <li>Comprar una casa</li>
-                    <li>Obtener un seguro medico</li>
-                    <li>Obtener una licencia de conducir</li>
-                    <li>Obtener una educacion</li>
-
+                    <li>Obtener seguro médico</li>
+                    <li>Conseguir una licencia de conducir</li>
+                    <li>Continuar tus estudios</li>
                   </ul>
+
+                  <p className="mt-8">
+                    <strong>¡No dejes pasar esta oportunidad única!</strong>
+                  </p>
+
+                  <p className="mt-8">
+                    <strong>Otras agencias están cobrando hasta $3,580</strong>, pero nosotros lo hacemos por solo <strong>$999</strong> esto ya incluye el pago de la aplicación de USCIS.
+                  </p>
+
+                  <p className="mt-8 text-center">
+                    <strong>¡Comienza hoy y asegúrate un futuro brillante!</strong>
+
+                  </p>
                 </div>
               ) : (
                 <div>
@@ -282,14 +290,40 @@ const VerResultado = async () => {
           </div>
         </CardContent>
 
-        <CardFooter className="flex flex-col my-8">
+        <CardFooter className="flex flex-col my-10">
 
-          <div className="flex justify-around items-center mt-4  w-full">
+          {califaca ?
+            (<div className="flex flex-col justify-around items-center mt-4  w-full">
+              <p className="my-8  text-center px-10">
+                <strong>¡Solo Nececitas $99 dollares para comenzar, el resto cuando tu applicacion este lista!</strong>
+              </p>
+              <Button asChild>
+                <Link href="/checkout">
+                  Haz tu pago de $99
+                </Link>
+              </Button>
+            </div>)
+            :
+            <div>
+              <div className="flex flex-col justify-center items-center mt-6 w-full p-4  shadow-lg rounded-lg">
+                <h2 className="text-lg font-semibold text-primary mb-4 text-center">
+                  ¡Tu aplicación está en buenas manos!
+                </h2>
+                <p className="text-base  text-center mb-4">
+                  Un representante legal revisará tu solicitud manualmente y, si encuentra oportunidades, te llamará para explicarte cómo puedes avanzar hacia tu legalización en Estados Unidos. ¡Estamos aquí para ayudarte a cumplir ese sueño!
+                </p>
+                <h3 className="text-base font-medium text-primary mb-2 text-center">
+                  ¿No quieres esperar? Puedes hablar con un representante ahora mismo.
+                </h3>
+                <Link href="tel:8044326474" className="inline-block">
+                  <button className="bg-primary hover:bg-accent-hover text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors">
+                    Llama Ahora: 804-432-6474
+                  </button>
+                </Link>
+              </div>
+            </div>
+          }
 
-            <Button>
-              <Link href="/resultado">Quiero Ser  Legal  en Estados Unidos?</Link>
-            </Button>
-          </div>
         </CardFooter>
       </Card>
     </div>
