@@ -8,7 +8,7 @@ import { Separator } from "@/components/ui/separator";
 
 import { crearPreAplicacion } from "@/utils/actions";
 
-const AplicacionPage = () => {
+const PreAplicacionPage = () => {
   return (
     <div>
       <div className="bg-secondary text-secondary-foreground p-4 rounded-xl">
@@ -205,4 +205,4 @@ const AplicacionPage = () => {
   );
 }
 
-export default AplicacionPage;
+export default PreAplicacionPage;

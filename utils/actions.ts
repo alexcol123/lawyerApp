@@ -70,7 +70,7 @@ export const createProfileAction = async (
     return renderError(error)
   }
 
-  redirect('/aplicacion')
+  redirect('/preAplicacion')
 }
 
 

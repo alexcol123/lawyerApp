@@ -35,10 +35,11 @@ model Perfil {
   emailAtSignup String
   imagenPerfil  String
 
-  nombre   String
-  apellido String
-  telefono String
-  email    String
+  nombre                          String
+  apellido                        String
+  telefono                        String
+  email                           String
+  applicationDepositPaid99Dollars Boolean @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

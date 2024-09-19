@@ -7,7 +7,7 @@ async function UserIcon() {
 
  
 
-  if (profileImage)
+  if (profileImage )
     return (
       <Image src={profileImage} alt="Profile Image" width={50} height={50} className='w-6 h-6 rounded-full object-cover' />
     )

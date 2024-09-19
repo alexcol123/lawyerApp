@@ -16,7 +16,7 @@ export const mylinks: NavLink[] = [
   // { href: '/reviews', label: 'reviews' },
   // { href: '/mis-ventas', label: 'mis ventas' },
   { href: '/perfil', label: 'perfil' },
-  { href: '/aplicacion', label: 'aplicacion' },
+  // { href: '/preAplicacion', label: 'pre-aplicacion' },
 
 ]
 

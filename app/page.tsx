@@ -1,5 +1,5 @@
 
-import CallToAction from "@/components/myComponents/landing/CallToAction"
+
 import ChatBtn from "@/components/myComponents/landing/ChatBtn"
 import CitasCarousel from "@/components/myComponents/landing/CitasCarousel"
 import Collapse from "@/components/myComponents/landing/Collapse"
@@ -7,8 +7,7 @@ import Footer from "@/components/myComponents/landing/Footer"
 
 
 import Info from "@/components/myComponents/landing/Info"
-import Info2 from "@/components/myComponents/landing/Info2"
-import PorqueElegirnos from "@/components/myComponents/landing/PorqueElegirnos"
+
 import LandingMain from "@/components/myComponents/landing/Section2"
 
 
@@ -20,7 +19,7 @@ const HomePage = () => {
 
       <LandingMain />
 
-      <CallToAction />
+
 
       <div className="p-2 bg-black  text-white rounded-xl ">
         <Info />
@@ -35,12 +34,7 @@ const HomePage = () => {
         </div>
       </div>
 
-<Info2 />
-
-
-<PorqueElegirnos />
-
-<Footer />
+      <Footer />
 
     </div>
   )
