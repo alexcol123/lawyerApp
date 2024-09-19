@@ -58,8 +58,8 @@ export default function RootLayout({
         >
           <Providers>
             <Navbar />
-            <main className='container py-10 '>
-              <div className="mt-20">{children}</div>
+            <main className='container'>
+              <div className="">{children}</div>
             </main>
 
           </Providers>

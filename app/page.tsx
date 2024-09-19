@@ -13,7 +13,7 @@ import LandingMain from "@/components/myComponents/landing/Section2"
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col gap-y-12">
+    <div className="flex flex-col ">
 
       <ChatBtn />
 
@@ -28,7 +28,7 @@ const HomePage = () => {
 
       <div className="p-4 border rounded-xl">
         <h3 className="text-xl font-semibold text-center ">Preguntas Frequentes</h3>
-        <h3 className="text-xl font-semibold text-center ">Sobre el I-131f</h3>
+        <h3 className="text-xl font-semibold text-center ">Sobre el I-131f (Familias Unidas)</h3>
         <div className="border rounded-xl p-4 ">
           <Collapse />
         </div>
