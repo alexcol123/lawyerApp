@@ -57,9 +57,9 @@ const VerResultado = async () => {
             <Image
               src="/images/familia.jpg"
               alt="Familia feliz"
-              layout="fill"
               objectFit="cover"
-              className="opacity-20 object-center"
+              fill
+
               priority
             />
           </div>

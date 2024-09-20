@@ -12,8 +12,9 @@ const ChatBtn = () => {
 
           {/* Texto del botón */}
           <div className="flex flex-col text-left">
-            <span className="font-semibold text-sm">¿Tienes Preguntas?</span>
-            <span className="text-xs">Habla con María</span>
+            <span className="font-semibold text-sm">¿ Preguntas?</span>
+            <span className="font-semibold text-sm">¿Sobre Familias Unidas?</span>
+            <span className="text-xs">Habla con María (AI)</span>
           </div>
 
           {/* Imagen de María */}

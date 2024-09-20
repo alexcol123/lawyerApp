@@ -1,3 +1,6 @@
+
+
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
@@ -8,22 +11,18 @@ import {
   FaCheckCircle,
   FaUserTie,
   FaHeadset,
-
   FaHeart,
   FaChild,
   FaHandsHelping,
-
-
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
 } from "react-icons/fa";
 import Testimonios from "./Testimonios";
 
 const LandingMain = () => {
   return (
     <div className="flex flex-col">
-
-
-
-
       {/* Sección Principal */}
       <div
         className="h-screen bg-cover bg-center flex items-center justify-center"
@@ -36,10 +35,13 @@ const LandingMain = () => {
             ¿Estás casado con un ciudadano americano?
           </h1>
           <p className="text-xl md:text-2xl">
-            Obtén tu residencia permanente en EE. UU., incluso si entraste ilegalmente.
+            Obtén tu residencia permanente en EE. UU., incluso si entraste
+            ilegalmente.
           </p>
           <p className="text-lg md:text-xl">
-            Solo te tomará <span className="font-bold text-pink-500">4 minutos</span> saber si calificas.
+            Solo te tomará{" "}
+            <span className="font-bold text-pink-500">4 minutos</span> saber si
+            calificas.
           </p>
           <Button
             asChild
@@ -49,7 +51,11 @@ const LandingMain = () => {
           </Button>
           <div className="flex items-center mt-4">
             <FaPhone className="mr-2" />
-            <a href="tel:1-800-123-4567" className="text-white text-lg md:text-xl font-bold">
+            <a
+              href="tel:1-800-123-4567"
+              className="text-white text-lg md:text-xl font-bold"
+              aria-label="Llámanos al 1-800-123-4567"
+            >
               Llámanos al 1-800-123-4567
             </a>
           </div>
@@ -65,9 +71,12 @@ const LandingMain = () => {
           {/* Servicio 1 */}
           <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md">
             <FaBalanceScale className="text-blue-600 w-16 h-16 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Asesoría Legal Especializada</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              Asesoría Legal Especializada
+            </h3>
             <p className="hidden md:block text-gray-700">
-              Contamos con abogados expertos en leyes migratorias para guiarte en cada paso.
+              Contamos con abogados expertos en leyes migratorias para guiarte
+              en cada paso.
             </p>
           </div>
           {/* Servicio 2 */}
@@ -75,7 +84,8 @@ const LandingMain = () => {
             <FaUserShield className="text-blue-600 w-16 h-16 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Representación Legal</h3>
             <p className="hidden md:block text-gray-700">
-              Te representamos ante las autoridades migratorias para asegurar el éxito de tu caso.
+              Te representamos ante las autoridades migratorias para asegurar el
+              éxito de tu caso.
             </p>
           </div>
           {/* Servicio 3 */}
@@ -83,7 +93,8 @@ const LandingMain = () => {
             <FaPassport className="text-blue-600 w-16 h-16 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Tramitación de Documentos</h3>
             <p className="hidden md:block text-gray-700">
-              Gestionamos y traducimos todos los documentos necesarios para tu aplicación.
+              Gestionamos y traducimos todos los documentos necesarios para tu
+              aplicación.
             </p>
           </div>
           {/* Servicio 4 */}
@@ -91,7 +102,8 @@ const LandingMain = () => {
             <FaHandsHelping className="text-blue-600 w-16 h-16 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Asistencia Personalizada</h3>
             <p className="hidden md:block text-gray-700">
-              Te acompañamos en todo el proceso para resolver cualquier duda que puedas tener.
+              Te acompañamos en todo el proceso para resolver cualquier duda que
+              puedas tener.
             </p>
           </div>
         </div>
@@ -103,7 +115,12 @@ const LandingMain = () => {
           ¿Qué es el Programa Familias Unidas?
         </h2>
         <p className="text-xl text-gray-700 mb-8">
-          El Programa <span className="text-blue-600 font-semibold">Familias Unidas</span> permite que ciertos <span className="font-bold">cónyuges</span> e <span className="font-bold">hijastros</span> de ciudadanos estadounidenses permanezcan en el país y soliciten la residencia permanente sin salir de EE.UU.
+          El Programa{" "}
+          <span className="text-blue-600 font-semibold">Familias Unidas</span>{" "}
+          permite que ciertos <span className="font-bold">cónyuges</span> e{" "}
+          <span className="font-bold">hijastros</span> de ciudadanos
+          estadounidenses permanezcan en el país y soliciten la residencia
+          permanente sin salir de EE.UU.
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
           <div className="flex items-center">
@@ -126,11 +143,10 @@ const LandingMain = () => {
           </div>
         </div>
         <p className="text-lg text-gray-700">
-          Explora esta opción para evitar largas separaciones y regularizar tu situación migratoria.
+          Explora esta opción para evitar largas separaciones y regularizar tu
+          situación migratoria.
         </p>
       </div>
-
-
 
       {/* Sección de Por qué elegirnos */}
       <div className="bg-white py-12 px-6 md:px-12">
@@ -142,7 +158,8 @@ const LandingMain = () => {
           <div className="flex items-center">
             <FaCheckCircle className="text-green-600 w-12 h-12 mr-4" />
             <p className="text-lg text-gray-700">
-              Más de 20 años de experiencia ayudando a familias a obtener su residencia.
+              Más de 20 años de experiencia ayudando a familias a obtener su
+              residencia.
             </p>
           </div>
           {/* Razón 2 */}
@@ -174,7 +191,8 @@ const LandingMain = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
           ¿Listo para dar el primer paso?
         </h2>
-        <p className="text-xl text-gray-700 mb-4">
+      
+          <p className="text-xl text-gray-700 mb-4">
           La pre-calificación dura menos de <span className="font-bold">4 minutos</span> y es completamente <span className="text-green-600 font-bold">GRATUITA</span>.
         </p>
         <Button
@@ -183,7 +201,6 @@ const LandingMain = () => {
         >
           <Link href="/precalificacion">Saber si califico</Link>
         </Button>
-
         <p className="text-lg text-gray-700">
           ¡No pierdas esta oportunidad de cambiar tu vida!
         </p>
@@ -249,24 +266,21 @@ const LandingMain = () => {
           </p>
         </div>
         <div className="mt-12">
-          <h2 className="my-4">  Ver Si Calificas para Familias Unidas</h2>
+          <h2 className="my-4 text-2xl font-bold text-gray-800">Ver Si Calificas para Familias Unidas</h2>
           <Button
             asChild
             className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-teal-600 hover:to-green-500 text-white text-lg md:text-xl py-4 px-8 rounded-full shadow-xl transform hover:scale-105 transition-transform duration-300"
           >
             <Link href="/precalificacion">Saber si califico</Link>
-
           </Button>
-
-          <h2 className="my-4">  Respuesta en menos de 4 Minutos</h2>
+          <h2 className="my-4 text-lg text-gray-700">Respuesta en menos de 4 Minutos</h2>
         </div>
       </div>
 
-      {/* Sección de testimonios */}
+      {/* Sección de Testimonios */}
       <Testimonios />
 
-
-
+      
     </div>
   );
 };

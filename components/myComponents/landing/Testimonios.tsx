@@ -24,7 +24,7 @@ const testimonials = [
   {
     name: 'Jorge & Jane',
     image: '/images/testimonios/04.jpg',
-    text: 'Con su ayuda, Jorge logro reunirlos documentosahora estoy esperando una decicion.',
+    text: 'Con su ayuda, Jorge logro reunirlos documentos ahora estoy esperando una decicion.',
     pais: 'Argentina'
   }
 ];
