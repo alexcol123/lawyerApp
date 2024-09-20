@@ -40,6 +40,7 @@ const StatusPage = () => {
     }, 3000);
 
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isComplete]);
 
   const currentStatus = statusMessages[statusIndex];

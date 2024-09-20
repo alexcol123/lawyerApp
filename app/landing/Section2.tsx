@@ -8,7 +8,6 @@ import {
   FaCheckCircle,
   FaUserTie,
   FaHeadset,
-  FaHandsHelping,
   FaHeart,
   FaChild,
   FaComments,
@@ -56,7 +55,7 @@ const LandingMain = () => {
           <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md">
             <FaComments className="text-blue-600 w-12 h-12 mb-4" />
             <p className="text-lg text-gray-700 mb-4">
-              "Gracias a Familias Unidas, ahora tengo mi residencia y puedo estar con mi familia sin preocupaciones."
+              &quot;Gracias a Familias Unidas, ahora tengo mi residencia y puedo estar con mi familia sin preocupaciones.&quot;
             </p>
             <p className="text-gray-800 font-semibold">- María G.</p>
           </div>
@@ -64,7 +63,7 @@ const LandingMain = () => {
           <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md">
             <FaComments className="text-blue-600 w-12 h-12 mb-4" />
             <p className="text-lg text-gray-700 mb-4">
-              "El proceso fue rápido y sencillo. El equipo me apoyó en todo momento."
+              &quot;El proceso fue rápido y sencillo. El equipo me apoyó en todo momento.&quot;
             </p>
             <p className="text-gray-800 font-semibold">- José R.</p>
           </div>

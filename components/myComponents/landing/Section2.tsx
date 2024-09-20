@@ -14,9 +14,7 @@ import {
   FaHeart,
   FaChild,
   FaHandsHelping,
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
+
 } from "react-icons/fa";
 import Testimonios from "./Testimonios";
 
