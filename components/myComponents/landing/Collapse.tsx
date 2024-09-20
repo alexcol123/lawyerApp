@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion"
 import { preguntasFrequentes } from "@/utils/preguntasFrequentes"
 
+
 const Collapse = () => {
   return (
 

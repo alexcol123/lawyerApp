@@ -44,97 +44,176 @@ type PreguntaTypes = {
 
 
 
+// export const preguntasFrequentes: PreguntaTypes[] = [
+//   {
+//     pregunta: '1. ¿Qué es la planilla I-131F?',
+//     respuesta: 'La planilla I-131F es una solicitud para un permiso de reingreso o documento de viaje adelantado, diseñado específicamente para ciertos beneficiarios de inmigración. Bajo el programa "Manteniendo a las Familias Unidas", esta planilla facilita la reunificación familiar.'
+//   },
+//   {
+//     pregunta: '2. ¿Cómo me puede ayudar su agencia con la planilla I-131F?',
+//     respuesta: 'Nuestra agencia se especializa en preparar y completar la documentación necesaria para la planilla I-131F. Nos encargamos de todos los detalles para garantizar que tu solicitud se presente correctamente y a tiempo.'
+//   },
+//   {
+//     pregunta: '3. ¿Qué incluye el costo del servicio de $499 de su agencia?',
+//     respuesta: 'El costo de $499 incluye la preparación completa de tu planilla I-131F, la revisión de tus documentos, el asesoramiento legal, la traducción de documentos y la redacción de todas las cartas en inglés, además del seguimiento de tu caso hasta que recibas tu cita con inmigración. Recuerda que USCIS también te cobrará $580 para procesar la aplicación, haciendo que el total sea $1,079.'
+//   },
+//   {
+//     pregunta: '4. ¿Hay algún costo inicial para empezar el proceso con su agencia?',
+//     respuesta: 'Sí, solo debes pagar $199 para comenzar con el proceso. El resto del pago se efectuará una vez que recibas tu cita con inmigración.'
+//   },
+//   {
+//     pregunta: '5. ¿El costo de su agencia incluye los honorarios de USCIS?',
+//     respuesta: 'No, el costo de nuestros servicios no incluye los honorarios que cobra USCIS. Además del costo de nuestro servicio, USCIS te cobrará $580 por la aplicación de la planilla I-131F.'
+//   },
+//   {
+//     pregunta: '6. ¿Cuáles son los pasos para empezar?',
+//     respuesta: '1. Contacta nuestra agencia y agenda una primera consulta.\n2. Paga la tarifa inicial de $199.\n3. Proporciona la documentación requerida.\n4. Nosotros nos encargaremos de traducir los documentos, redactar cartas en inglés y completar y presentar tu planilla I-131F.\n5. Paga el saldo restante una vez que recibas tu cita con inmigración.'
+//   },
+//   {
+//     pregunta: '7. ¿Qué documentos necesito proporcionar para la planilla I-131F?',
+//     respuesta: 'Por lo general, necesitarás proporcionar identificación personal, documentos de residencia, comprobantes de relación familiar y cualquier otro documento que acredite tu necesidad de viajar bajo el programa "Manteniendo a las Familias Unidas". Te guiaremos a través de esta lista detalladamente en nuestra consulta inicial.'
+//   },
+//   {
+//     pregunta: '8. ¿Cuánto tiempo llevará procesar mi planilla I-131F?',
+//     respuesta: 'El tiempo de procesamiento puede variar. Una vez que se envía la planilla, USCIS tomará un tiempo promedio para revisar y procesar tu solicitud. Te mantendremos informado de cualquier actualización relevante.'
+//   },
+//   {
+//     pregunta: '9. ¿Cómo puedo contactarlos para obtener más información?',
+//     respuesta: 'Puedes contactarnos a través de nuestro sitio web, llamándonos directamente o visitando nuestra oficina. Estamos aquí para ayudarte en cada paso del proceso.'
+//   },
+//   {
+//     pregunta: '10. ¿Qué hará su agencia si mi solicitud es rechazada?',
+//     respuesta: 'Si tu solicitud es rechazada, evaluaremos los motivos del rechazo e intentaremos resolver cualquier problema que haya surgido. En algunos casos, puede ser necesario presentar una nueva solicitud o proporcionar documentación adicional.'
+//   },
+//   {
+//     pregunta: '11. ¿Qué distingue a su agencia de otras?',
+//     respuesta: 'Nos enorgullece brindar servicios personalizados y de alta calidad. Nuestro equipo de expertos tiene una amplia experiencia en casos de inmigración y un profundo conocimiento del programa "Manteniendo a las Familias Unidas". Además de completar y presentar tu solicitud, también ofrecemos traducción de documentos y redacción de cartas en inglés, asegurándonos de que tu aplicación tenga el mayor éxito posible. Además, mientras que otras agencias pueden cobrar sobre $3,000 por estos servicios, nosotros te ofrecemos la misma calidad de servicio por solo $499 (más la tarifa de USCIS de $580).'
+//   },
+//   {
+//     pregunta: '12. ¿Cuál es el método de pago aceptado para sus servicios?',
+//     respuesta: 'Aceptamos pagos mediante transferencia bancaria, tarjeta de crédito, PayPal y en efectivo. Tenemos varias opciones de pago para tu conveniencia.'
+//   },
+//   {
+//     pregunta: '13. ¿Pueden representar mi caso ante USCIS en persona?',
+//     respuesta: 'Sí, nuestros abogados capacitados pueden representarte y asistirte en cualquier audiencia o reunión necesaria con USCIS.'
+//   },
+//   {
+//     pregunta: '14. ¿Ofrecen servicios de asesoramiento continuado después de presentar la planilla?',
+//     respuesta: 'Sí, ofrecemos servicios de seguimiento y asesoramiento continuado incluso después de presentar tu planilla para asegurarnos de que el proceso se desarrolle sin problemas.'
+//   },
+//   {
+//     pregunta: '15. ¿Es necesario tener un abogado durante mi cita con inmigración?',
+//     respuesta: 'No siempre es necesario, pero tener un abogado puede brindarte tranquilidad y asegurarte de que todos los aspectos legales se manejen adecuadamente.'
+//   },
+//   {
+//     pregunta: '16. ¿Qué tipo de soporte adicional ofrecen durante el proceso?',
+//     respuesta: 'Ofrecemos soporte integral que incluye consultas telefónicas, seguimiento por correo electrónico y reuniones en persona para abordar cualquier inquietud que puedas tener durante el proceso.'
+//   },
+//   {
+//     pregunta: '17. ¿Tienen experiencia en otros tipos de casos de inmigración?',
+//     respuesta: 'Sí, además de especializarnos en la planilla I-131F, también tenemos una amplia experiencia en otros casos de inmigración como solicitudes de asilo, ajuste de estatus y más.'
+//   },
+//   {
+//     pregunta: '18. ¿Qué es "Manteniendo a las Familias Unidas"?',
+//     respuesta: 'Es un proceso que permite que ciertos no ciudadanos, como cónyuges e hijastros de ciudadanos estadounidenses, soliciten el permiso de permanencia temporal en el país ("parole in place"). Esto les permite solicitar la residencia permanente sin tener que salir del país. El Departamento de Seguridad Nacional (DHS) otorga este permiso de forma discrecional, basándose en razones humanitarias urgentes o de beneficio público significativo.'
+//   },
+//   {
+//     pregunta: '19. ¿Qué formulario debo presentar para el proceso Manteniendo a las Familias Unidas? ¿Puedo presentar la solicitud en línea?',
+//     respuesta: 'Debes presentar el Formulario I-131F. Este formulario solo se puede enviar en línea; las versiones impresas enviadas por correo serán rechazadas. Existe una guía para ayudarte a preparar la solicitud en línea.'
+//   },
+//   {
+//     pregunta: '20. Si se me concede mi petición bajo Manteniendo a las Familias Unidas, ¿cuánto durará mi permiso de permanencia temporal en el país?',
+//     respuesta: 'El permiso será válido por tres años desde la aprobación del Formulario I-131F. Sin embargo, se cancelará automáticamente si sales de Estados Unidos o puede ser anulado por DHS si consideran que ya no está justificado.'
+//   },
+//   {
+//     pregunta: '21. ¿Cuáles son los criterios de elegibilidad para el proceso Manteniendo a las Familias Unidas?',
+//     respuesta: 'Debes estar presente en Estados Unidos sin haber sido admitido ni haber recibido un permiso de permanencia temporal; haber estado físicamente presente desde al menos el 17 de junio de 2014 (para cónyuges) o el 17 de junio de 2024 (para hijastros); tener un matrimonio legalmente válido con un ciudadano estadounidense en o antes de las fechas mencionadas; y no tener antecedentes penales que te descalifiquen.'
+//   },
+//   {
+//     pregunta: '22. ¿Cómo puedo presentar una petición bajo Manteniendo a las Familias Unidas?',
+//     respuesta: 'Debes presentar el Formulario I-131F en línea y pagar una tarifa de $580. Si decides que nuestra agencia llene la documentación por ti, habrá un cargo de $499, haciendo que el total sea $1,079.'
+//   },
+//   {
+//     pregunta: '23. ¿Otras preguntas?',
+//     respuesta: 'Solo haz clic en el botón de abajo ("Habla con María") y ella responderá cualquier pregunta que tengas sobre el proceso de Manteniendo a las Familias Unidas.'
+//   }
+// ];
+
+
 export const preguntasFrequentes: PreguntaTypes[] = [
+  // Preguntas sobre el Programa Familias Unidas
   {
-    pregunta: '1. ¿Qué es la planilla I-131F?',
-    respuesta: 'La planilla I-131F es una solicitud para un permiso de reingreso o documento de viaje adelantado, diseñado específicamente para ciertos beneficiarios de inmigración. Bajo el programa "Manteniendo a las Familias Unidas", esta planilla facilita la reunificación familiar.'
+    pregunta: "¿Qué es el Programa Familias Unidas?",
+    respuesta: "El Programa Familias Unidas permite que ciertos cónyuges e hijastros de ciudadanos estadounidenses permanezcan en el país y soliciten la residencia permanente sin salir de EE. UU."
   },
   {
-    pregunta: '2. ¿Cómo me puede ayudar su agencia con la planilla I-131F?',
-    respuesta: 'Nuestra agencia se especializa en preparar y completar la documentación necesaria para la planilla I-131F. Nos encargamos de todos los detalles para garantizar que tu solicitud se presente correctamente y a tiempo.'
+    pregunta: "¿Quiénes califican para el Programa Familias Unidas?",
+    respuesta: "Califican los cónyuges e hijastros de ciudadanos estadounidenses que cumplan con ciertos requisitos específicos de elegibilidad."
   },
   {
-    pregunta: '3. ¿Qué incluye el costo del servicio de $499 de su agencia?',
-    respuesta: 'El costo de $499 incluye la preparación completa de tu planilla I-131F, la revisión de tus documentos, el asesoramiento legal, la traducción de documentos y la redacción de todas las cartas en inglés, además del seguimiento de tu caso hasta que recibas tu cita con inmigración. Recuerda que USCIS también te cobrará $580 para procesar la aplicación, haciendo que el total sea $1,079.'
+    pregunta: "¿Cuáles son los beneficios del Programa Familias Unidas?",
+    respuesta: "El programa permite a los beneficiarios permanecer en EE. UU. mientras completan el proceso de solicitud de residencia permanente, evitando largas separaciones familiares."
   },
   {
-    pregunta: '4. ¿Hay algún costo inicial para empezar el proceso con su agencia?',
-    respuesta: 'Sí, solo debes pagar $199 para comenzar con el proceso. El resto del pago se efectuará una vez que recibas tu cita con inmigración.'
+    pregunta: "¿Puedo aplicar al Programa Familias Unidas si entré ilegalmente a EE. UU.?",
+    respuesta: "Sí, el programa está diseñado para ayudar a personas que entraron al país sin documentos legales a regularizar su situación migratoria."
   },
   {
-    pregunta: '5. ¿El costo de su agencia incluye los honorarios de USCIS?',
-    respuesta: 'No, el costo de nuestros servicios no incluye los honorarios que cobra USCIS. Además del costo de nuestro servicio, USCIS te cobrará $580 por la aplicación de la planilla I-131F.'
+    pregunta: "¿Necesito salir del país para aplicar al Programa Familias Unidas?",
+    respuesta: "No, uno de los principales beneficios del programa es que puedes completar el proceso sin salir de EE. UU."
   },
   {
-    pregunta: '6. ¿Cuáles son los pasos para empezar?',
-    respuesta: '1. Contacta nuestra agencia y agenda una primera consulta.\n2. Paga la tarifa inicial de $199.\n3. Proporciona la documentación requerida.\n4. Nosotros nos encargaremos de traducir los documentos, redactar cartas en inglés y completar y presentar tu planilla I-131F.\n5. Paga el saldo restante una vez que recibas tu cita con inmigración.'
+    pregunta: "¿El Programa Familias Unidas también beneficia a los hijastros?",
+    respuesta: "Sí, los hijastros de ciudadanos estadounidenses también pueden calificar para el programa si cumplen con los requisitos establecidos."
   },
   {
-    pregunta: '7. ¿Qué documentos necesito proporcionar para la planilla I-131F?',
-    respuesta: 'Por lo general, necesitarás proporcionar identificación personal, documentos de residencia, comprobantes de relación familiar y cualquier otro documento que acredite tu necesidad de viajar bajo el programa "Manteniendo a las Familias Unidas". Te guiaremos a través de esta lista detalladamente en nuestra consulta inicial.'
+    pregunta: "¿Cuánto tiempo tarda el proceso del Programa Familias Unidas?",
+    respuesta: "El tiempo puede variar dependiendo de cada caso, pero generalmente el proceso puede tomar varios meses hasta su finalización."
   },
   {
-    pregunta: '8. ¿Cuánto tiempo llevará procesar mi planilla I-131F?',
-    respuesta: 'El tiempo de procesamiento puede variar. Una vez que se envía la planilla, USCIS tomará un tiempo promedio para revisar y procesar tu solicitud. Te mantendremos informado de cualquier actualización relevante.'
+    pregunta: "¿Cuáles son los requisitos para aplicar al Programa Familias Unidas?",
+    respuesta: "Debes ser cónyuge o hijastro de un ciudadano estadounidense y cumplir con ciertos requisitos específicos de elegibilidad. Es recomendable consultar con un experto para evaluar tu caso particular."
+  },
+
+  // Preguntas sobre la Agencia Legal Digital
+  {
+    pregunta: "¿Cuánto cuesta el servicio para aplicar al Programa Familias Unidas con su agencia?",
+    respuesta: "Nuestro servicio cuesta $499, y puedes empezar con solo $199 como pago inicial."
   },
   {
-    pregunta: '9. ¿Cómo puedo contactarlos para obtener más información?',
-    respuesta: 'Puedes contactarnos a través de nuestro sitio web, llamándonos directamente o visitando nuestra oficina. Estamos aquí para ayudarte en cada paso del proceso.'
+    pregunta: "¿Por qué su agencia cobra menos que otras agencias tradicionales?",
+    respuesta: "Somos una agencia digital, lo que nos permite reducir costos operativos y ofrecerte un servicio de alta calidad a un precio mucho más accesible."
   },
   {
-    pregunta: '10. ¿Qué hará su agencia si mi solicitud es rechazada?',
-    respuesta: 'Si tu solicitud es rechazada, evaluaremos los motivos del rechazo e intentaremos resolver cualquier problema que haya surgido. En algunos casos, puede ser necesario presentar una nueva solicitud o proporcionar documentación adicional.'
+    pregunta: "¿Qué incluye el servicio de $499?",
+    respuesta: "Incluye la asistencia completa en la preparación y presentación de tu caso, traducción de documentos, y asesoría personalizada durante todo el proceso."
   },
   {
-    pregunta: '11. ¿Qué distingue a su agencia de otras?',
-    respuesta: 'Nos enorgullece brindar servicios personalizados y de alta calidad. Nuestro equipo de expertos tiene una amplia experiencia en casos de inmigración y un profundo conocimiento del programa "Manteniendo a las Familias Unidas". Además de completar y presentar tu solicitud, también ofrecemos traducción de documentos y redacción de cartas en inglés, asegurándonos de que tu aplicación tenga el mayor éxito posible. Además, mientras que otras agencias pueden cobrar sobre $3,000 por estos servicios, nosotros te ofrecemos la misma calidad de servicio por solo $499 (más la tarifa de USCIS de $580).'
+    pregunta: "¿Puedo pagar en cuotas?",
+    respuesta: "Sí, puedes empezar con un pago inicial de $199 y pagar el resto en cómodas cuotas durante el proceso."
   },
   {
-    pregunta: '12. ¿Cuál es el método de pago aceptado para sus servicios?',
-    respuesta: 'Aceptamos pagos mediante transferencia bancaria, tarjeta de crédito, PayPal y en efectivo. Tenemos varias opciones de pago para tu conveniencia.'
+    pregunta: "¿Qué diferencia hay entre su agencia digital y una agencia tradicional?",
+    respuesta: "Nuestra agencia digital te ofrece la misma calidad de servicio, pero con la conveniencia de hacerlo todo en línea y a un costo significativamente menor."
   },
   {
-    pregunta: '13. ¿Pueden representar mi caso ante USCIS en persona?',
-    respuesta: 'Sí, nuestros abogados capacitados pueden representarte y asistirte en cualquier audiencia o reunión necesaria con USCIS.'
+    pregunta: "¿Cómo puede su agencia digital ofrecer precios tan bajos?",
+    respuesta: "Al no tener costos asociados a oficinas físicas y utilizar tecnología avanzada, podemos reducir nuestros costos y trasladar esos ahorros a nuestros clientes."
   },
   {
-    pregunta: '14. ¿Ofrecen servicios de asesoramiento continuado después de presentar la planilla?',
-    respuesta: 'Sí, ofrecemos servicios de seguimiento y asesoramiento continuado incluso después de presentar tu planilla para asegurarnos de que el proceso se desarrolle sin problemas.'
+    pregunta: "¿Qué documentos necesito proporcionar para empezar con su agencia?",
+    respuesta: "Necesitarás documentos personales básicos como identificación, acta de matrimonio (si aplica), y cualquier otro documento relevante para tu caso específico. Te guiaremos en cada paso para asegurarnos de que tengas todo lo necesario."
   },
   {
-    pregunta: '15. ¿Es necesario tener un abogado durante mi cita con inmigración?',
-    respuesta: 'No siempre es necesario, pero tener un abogado puede brindarte tranquilidad y asegurarte de que todos los aspectos legales se manejen adecuadamente.'
+    pregunta: "¿Cómo funciona el proceso con su agencia si todo es digital?",
+    respuesta: "El proceso es simple: te registras en nuestra plataforma, completas un formulario inicial, y luego te asignamos un asesor que te guiará a través del proceso de principio a fin, todo de manera digital y segura."
   },
   {
-    pregunta: '16. ¿Qué tipo de soporte adicional ofrecen durante el proceso?',
-    respuesta: 'Ofrecemos soporte integral que incluye consultas telefónicas, seguimiento por correo electrónico y reuniones en persona para abordar cualquier inquietud que puedas tener durante el proceso.'
+    pregunta: "¿Cómo puedo contactar a su equipo si tengo dudas?",
+    respuesta: "Puedes contactarnos a través de chat en vivo en nuestro sitio web, por teléfono al 1-800-123-4567, o enviándonos un correo a info@tuagencia.com."
   },
   {
-    pregunta: '17. ¿Tienen experiencia en otros tipos de casos de inmigración?',
-    respuesta: 'Sí, además de especializarnos en la planilla I-131F, también tenemos una amplia experiencia en otros casos de inmigración como solicitudes de asilo, ajuste de estatus y más.'
-  },
-  {
-    pregunta: '18. ¿Qué es "Manteniendo a las Familias Unidas"?',
-    respuesta: 'Es un proceso que permite que ciertos no ciudadanos, como cónyuges e hijastros de ciudadanos estadounidenses, soliciten el permiso de permanencia temporal en el país ("parole in place"). Esto les permite solicitar la residencia permanente sin tener que salir del país. El Departamento de Seguridad Nacional (DHS) otorga este permiso de forma discrecional, basándose en razones humanitarias urgentes o de beneficio público significativo.'
-  },
-  {
-    pregunta: '19. ¿Qué formulario debo presentar para el proceso Manteniendo a las Familias Unidas? ¿Puedo presentar la solicitud en línea?',
-    respuesta: 'Debes presentar el Formulario I-131F. Este formulario solo se puede enviar en línea; las versiones impresas enviadas por correo serán rechazadas. Existe una guía para ayudarte a preparar la solicitud en línea.'
-  },
-  {
-    pregunta: '20. Si se me concede mi petición bajo Manteniendo a las Familias Unidas, ¿cuánto durará mi permiso de permanencia temporal en el país?',
-    respuesta: 'El permiso será válido por tres años desde la aprobación del Formulario I-131F. Sin embargo, se cancelará automáticamente si sales de Estados Unidos o puede ser anulado por DHS si consideran que ya no está justificado.'
-  },
-  {
-    pregunta: '21. ¿Cuáles son los criterios de elegibilidad para el proceso Manteniendo a las Familias Unidas?',
-    respuesta: 'Debes estar presente en Estados Unidos sin haber sido admitido ni haber recibido un permiso de permanencia temporal; haber estado físicamente presente desde al menos el 17 de junio de 2014 (para cónyuges) o el 17 de junio de 2024 (para hijastros); tener un matrimonio legalmente válido con un ciudadano estadounidense en o antes de las fechas mencionadas; y no tener antecedentes penales que te descalifiquen.'
-  },
-  {
-    pregunta: '22. ¿Cómo puedo presentar una petición bajo Manteniendo a las Familias Unidas?',
-    respuesta: 'Debes presentar el Formulario I-131F en línea y pagar una tarifa de $580. Si decides que nuestra agencia llene la documentación por ti, habrá un cargo de $499, haciendo que el total sea $1,079.'
-  },
-  {
-    pregunta: '23. ¿Otras preguntas?',
-    respuesta: 'Solo haz clic en el botón de abajo ("Habla con María") y ella responderá cualquier pregunta que tengas sobre el proceso de Manteniendo a las Familias Unidas.'
+    pregunta: "¿El servicio incluye la traducción de documentos necesarios?",
+    respuesta: "Sí, la traducción de documentos necesarios está incluida en nuestro servicio sin costo adicional."
   }
 ];
