@@ -53,27 +53,15 @@ const SingleBlogPage = ({ params }: { params: { id: string } }) => {
             <Card className="p-6 bg-white shadow-md rounded-lg">
               <header className="mb-6">
                 {/* Mostrar la imagen si está disponible */}
-                {blog.image ? (
-                  <div className="mb-6">
-                    <Image
-                      src={blog.image}
-                      alt={blog.title}
-                      width={500}
-                      height={500}
-                      className="object-cover w-full h-auto rounded-lg shadow-md"
-                    />
-                  </div>
-                ) : (
-                  <div className="mb-6">
-                    <Image
-                      src={'/images/familia.jpg'}
-                      alt={blog.title}
-                      width={500}
-                      height={500}
-                      className="object-cover w-full h-auto rounded-lg shadow-md"
-                    />
-                  </div>
-                )}
+                <div className="mb-6">
+                  <Image
+                    src={blog.image ? blog.image : '/images/blog/blog.webp'}
+                    alt={blog.title}
+                    width={500}
+                    height={500}
+                    className="object-cover w-full h-auto rounded-lg shadow-md"
+                  />
+                </div>
                 {/* Título del blog con tamaño de letra responsivo */}
                 <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                   {blog.title}

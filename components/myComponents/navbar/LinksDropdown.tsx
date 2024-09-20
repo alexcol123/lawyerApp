@@ -84,6 +84,12 @@ function LinksDropdown() {
               <button className='w-full text-left'>Registrarse</button>
             </SignUpButton>
           </DropdownMenuItem>
+
+          <DropdownMenuItem >
+                <Link href='/blog' className='capitalize w-full'>
+                 articulos / blog
+                </Link>
+              </DropdownMenuItem>
         </SignedOut>
 
 
