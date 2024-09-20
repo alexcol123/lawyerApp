@@ -106,10 +106,10 @@ const LandingMain = () => {
       {/* Sección sobre el Programa Familias Unidas */}
       <div className="bg-gray-100 py-12 px-6 md:px-12 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-          ¿Qué es el Programa Familias Unidas?
+          ¿Qué es el Programa Manteniendo a las Familias Unidas?
         </h2>
         <p className="text-xl text-gray-700 mb-8">
-          El Programa <span className="text-blue-600 font-semibold">Familias Unidas</span> es una iniciativa que permite que ciertos <span className="font-bold">cónyuges</span> e <span className="font-bold">hijastros</span> de ciudadanos estadounidenses obtengan un permiso especial para permanecer en el país y solicitar la residencia permanente sin tener que salir de Estados Unidos.
+          El Programa <span className="text-blue-600 font-semibold">Manteniendo a las Familias Unidas</span> es una iniciativa que permite que ciertos <span className="font-bold">cónyuges</span> e <span className="font-bold">hijastros</span> de ciudadanos estadounidenses obtengan un permiso especial para permanecer en el país y solicitar la residencia permanente sin tener que salir de Estados Unidos.
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
           <div className="flex items-center">

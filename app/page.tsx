@@ -3,12 +3,12 @@
 import ChatBtn from "@/components/myComponents/landing/ChatBtn"
 import CitasCarousel from "@/components/myComponents/landing/CitasCarousel"
 import Collapse from "@/components/myComponents/landing/Collapse"
-import Footer from "@/components/myComponents/landing/Footer"
 
 
 import Info from "@/components/myComponents/landing/Info"
 
 import LandingMain from "@/components/myComponents/landing/Section2"
+import Footer from "./landing/Footer"
 
 
 const HomePage = () => {
@@ -34,8 +34,9 @@ const HomePage = () => {
         </div>
       </div>
 
-      <Footer />
 
+      <Footer />
+      
     </div>
   )
 }
