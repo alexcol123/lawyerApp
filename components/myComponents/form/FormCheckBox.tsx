@@ -1,25 +1,40 @@
-"use client"
+"use client";
 
+import { Checkbox } from "@/components/ui/checkbox";
+import { useState, useEffect } from "react";
 
-import { Checkbox } from "@/components/ui/checkbox"
-import { useState } from "react"
+interface FormCheckBoxProps {
+  name: string;
+  texto: string;
+  checked?: boolean;
+  onChange?: (newValue: boolean) => void; // Agregamos un callback para manejar el cambio
+}
 
+const FormCheckBox = ({ name, texto, checked = false, onChange }: FormCheckBoxProps) => {
+  const [valor, setValor] = useState(checked);
 
-const FormCheckBox = ({ name, texto }: { name: string, texto: string }) => {
+  // Sincroniza el estado interno con el valor del prop `checked` inicial
+  useEffect(() => {
+    setValor(checked);
+  }, [checked]);
 
+  console.log(valor)
 
-  const [valor, setvalor] = useState(false)
+  const handleCheckedChange = (newChecked: boolean) => {
+    setValor(newChecked);
+    if (onChange) {
+      onChange(newChecked); // Llama al callback con el nuevo valor
+    }
+  };
 
   return (
     <div className="flex items-center mb-3">
-      <Checkbox id={name}
+      <Checkbox
+        id={name}
         name={name}
-        onCheckedChange={() => setvalor(!valor)}
         checked={valor}
+        onCheckedChange={handleCheckedChange}
         value={valor.toString()}
-
-
-
       />
       <label
         htmlFor={name}
@@ -28,7 +43,7 @@ const FormCheckBox = ({ name, texto }: { name: string, texto: string }) => {
         {texto}
       </label>
     </div>
+  );
+};
 
-  )
-}
 export default FormCheckBox

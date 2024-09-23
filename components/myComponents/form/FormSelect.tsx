@@ -37,7 +37,7 @@ const FormSelect = ({ name, label, list, defaultValue }: { name: string, label?:
 
           {list.map((item: ListType) => {
 
-            console.log(item)
+   
             return (
               <SelectItem key={item.name} value={item.name}>
                 <span className=' flex items-center justify-around gap-12 '>

@@ -59,7 +59,7 @@ export default function RootLayout({
           <Providers>
             <Navbar />
             <main className='container'>
-              <div className="">{children}</div>
+              <div className="pt-32">{children}</div>
             </main>
 
           </Providers>

@@ -3,12 +3,22 @@ import FormCheckBox from "@/components/myComponents/form/FormCheckBox";
 import FormContainer from "@/components/myComponents/form/FormContainer";
 import FormInput from "@/components/myComponents/form/FormInput";
 import FormSelect from "@/components/myComponents/form/FormSelect";
-import FormTextAreaInput from "@/components/myComponents/form/FormTextAreaInput";
+
 import { Separator } from "@/components/ui/separator";
 
-import { crearPreAplicacion } from "@/utils/actions";
+import { getUnaAplicacion, updatePreAplicacion } from "@/utils/actions";
+import { redirect } from "next/navigation";
 
-const PreAplicacionPage = () => {
+
+const EditarPreAplicacionPage = async () => {
+
+
+  const currentApplicacion = await getUnaAplicacion()
+
+  // console.log(currentApplicacion)
+
+  if (!currentApplicacion) redirect('/mi-aplicacion')
+
   return (
     <div>
 
@@ -16,37 +26,20 @@ const PreAplicacionPage = () => {
       <div className="border rounded-xl mt-14 p-4">
 
 
-        {/* <div className="mb-20 bg-muted p-3">
-
-          <h3 className="text-2xl font-bold text-blue-600 text-center mb-4">
-            ¡Pre-Aplicación Simplificada!
-          </h3>
-
-          <h5 className="text-lg font-medium text-gray-700 text-center mb-4">
-            Completa el formulario con tu información básica y descubre si calificas para la I-131F (Programa Manteniendo Familias Unidas).
-          </h5>
-
-          <h5 className="text-lg font-medium text-gray-700 text-center">
-            Obtén una respuesta en menos de <span className="text-blue-600 font-semibold">4 minutos</span>.
-          </h5>
-        </div> */}
-
-
         <div className="mb-20 bg-muted p-6 rounded-lg shadow-lg">
           <h3 className="text-2xl font-bold text-blue-600 text-center mb-4">
-            ¡Pre-Aplicación Simplificada!
+            ¡Editar tu Pre-Aplicación!
           </h3>
 
           <h5 className="text-lg font-medium text-gray-700 text-center mb-4">
-            Estás a un paso de cambiar tu vida. Completa el formulario con tu información básica y descubre si calificas para la I-131F (Programa Manteniendo Familias Unidas).
+            Haz los cambios necesarios en tu información.
           </h5>
 
-          <h5 className="text-xl font-semibold text-blue-600  text-center">
-            Respuesta inmediata.
-          </h5>
         </div>
 
-        <FormContainer action={crearPreAplicacion}>
+
+
+        <FormContainer action={updatePreAplicacion}>
           <h1 className="text-primary font-semibold my-3">Información del Aplicante</h1>
 
           <div className="grid md:grid-cols-2 gap-8 mb-4 items-center justify-center">
@@ -55,6 +48,7 @@ const PreAplicacionPage = () => {
               type="text"
               label="Nombre"
               placeholder="Ej: María"
+              defaultValue={currentApplicacion.applicantLegalFirstName}
             />
 
             <FormInput
@@ -63,6 +57,8 @@ const PreAplicacionPage = () => {
               required={false}
               label="Segundo Nombre (opcional)"
               placeholder="Ej: Isabel"
+              defaultValue={currentApplicacion.applicantLegalMiddleName ?? ''}
+
             />
 
             <FormInput
@@ -70,6 +66,8 @@ const PreAplicacionPage = () => {
               type="text"
               label="Apellido"
               placeholder="Ej: Morales"
+              defaultValue={currentApplicacion.applicantLegalLastName}
+
             />
 
             <FormInput
@@ -77,6 +75,7 @@ const PreAplicacionPage = () => {
               type="date"
               label="Fecha de Nacimiento"
               placeholder="Ej: 15-10-2005"
+              defaultValue={currentApplicacion.applicantDOB?.toISOString().split('T')[0]}
             />
 
             <FormInput
@@ -84,6 +83,7 @@ const PreAplicacionPage = () => {
               type="text"
               label="Dirección Física"
               placeholder="Ej: 7169 Harbor St, Orlando, FL 32835"
+              defaultValue={currentApplicacion.addressFisical}
             />
 
             <FormInput
@@ -91,6 +91,7 @@ const PreAplicacionPage = () => {
               type="text"
               label="Teléfono"
               placeholder="Ej: 407-888-8888"
+              defaultValue={currentApplicacion.phone}
             />
 
             <FormInput
@@ -98,6 +99,7 @@ const PreAplicacionPage = () => {
               type="email"
               label="Correo Electrónico"
               placeholder="Ej: jenny@yahoo.com"
+              defaultValue={currentApplicacion.email}
             />
 
             <FormInput
@@ -105,6 +107,7 @@ const PreAplicacionPage = () => {
               type="text"
               label="País de Nacimiento"
               placeholder="México"
+              defaultValue={currentApplicacion.paisNacimiento}
             />
 
             <FormSelect
@@ -115,6 +118,7 @@ const PreAplicacionPage = () => {
                 { name: 'Femenino' },
                 { name: 'Prefiero no decir' }
               ]}
+              defaultValue={currentApplicacion.sexo}
             />
 
             <FormSelect
@@ -124,6 +128,7 @@ const PreAplicacionPage = () => {
                 { name: 'Hispano o Latino' },
                 { name: 'No soy hispano o latino' },
               ]}
+              defaultValue={currentApplicacion.etnicity}
             />
 
             <FormSelect
@@ -136,6 +141,7 @@ const PreAplicacionPage = () => {
                 { name: 'Nativo de Hawái u Otro Isleño del Pacífico' },
                 { name: 'Blanco' },
               ]}
+              defaultValue={currentApplicacion.race}
             />
 
             <FormInput
@@ -143,6 +149,7 @@ const PreAplicacionPage = () => {
               type="date"
               label="Fecha en que te casaste con el ciudadano americano"
               placeholder="Ej: 15-10-2018"
+              defaultValue={currentApplicacion.dateOfMarriage?.toISOString().split('T')[0]}
             />
           </div>
 
@@ -152,6 +159,7 @@ const PreAplicacionPage = () => {
               type="date"
               label="Fecha en que llegaste a los Estados Unidos (Si no sabes, da una estimación)"
               placeholder="Ej: 15-10-2005"
+              defaultValue={currentApplicacion.applicantWhenArrivedToUS?.toISOString().split('T')[0]}
             />
           </div>
 
@@ -160,12 +168,20 @@ const PreAplicacionPage = () => {
           <h1 className="text-primary font-semibold my-3">Información Legal del Aplicante</h1>
 
           <div className="mb-8">
-            <FormCheckBox name="esSpouse" texto="Marca si eres cónyuge (esposo/a) de un ciudadano americano" />
-            <FormCheckBox name="esStepchild" texto="Marca si eres hijastro/a de un ciudadano americano" />
+            <FormCheckBox name="esSpouse" texto="Marca si eres cónyuge (esposo/a) de un ciudadano americano"
+            checked={currentApplicacion.esSpouse}
+
+            />
+            <FormCheckBox name="esStepchild" texto="Marca si eres hijastro/a de un ciudadano americano"
+
+            />
           </div>
-          <FormCheckBox name="applicantHasBeenDeported" texto="Marca si has sido deportado de los Estados Unidos" />
+          <FormCheckBox name="applicantHasBeenDeported" texto="Marca si has sido deportado de los Estados Unidos"
+         
+          />
           <FormCheckBox name="applicantHasArrests" texto="Marca si has tenido arrestos dentro de los Estados Unidos" />
-  
+        
+
 
           <Separator orientation="horizontal" className="my-6" />
 
@@ -177,6 +193,7 @@ const PreAplicacionPage = () => {
               type="text"
               label="Nombre de tu Cónyuge "
               placeholder="Ej: James"
+              defaultValue={currentApplicacion.spouseThatIsCitizenLegalFirstName}
             />
 
             <FormInput
@@ -184,7 +201,7 @@ const PreAplicacionPage = () => {
               type="text"
               required={false}
               label="Segundo Nombre de tu Cónyuge (opcional)  "
-              placeholder="Ej: Steven "
+              defaultValue={currentApplicacion.spouseThatIsCitizenLegalMiddleName ?? ''}
             />
 
             <FormInput
@@ -192,6 +209,7 @@ const PreAplicacionPage = () => {
               type="text"
               label="Apellido de tu Cónyuge (opcional) "
               placeholder="Ej: Smith"
+              defaultValue={currentApplicacion.spouseThatIsCitizenLegalLastName}
             />
 
             <FormInput
@@ -199,6 +217,7 @@ const PreAplicacionPage = () => {
               type="date"
               label="Fecha de Nacimiento de tu Cónyuge"
               placeholder="Ej: 15 de julio de 1980"
+              defaultValue={currentApplicacion.spouseThatIsCitizenDOB?.toISOString().split('T')[0]}
             />
           </div>
 
@@ -206,7 +225,9 @@ const PreAplicacionPage = () => {
 
 
           <div className="flex items-center justify-center w-full">
-            <SubmitButton text="Submitir Aplicación" className="mt-12" />
+
+            
+            <SubmitButton text="Submitir Cambios" className="mt-12" />
           </div>
         </FormContainer>
       </div>
@@ -214,4 +235,4 @@ const PreAplicacionPage = () => {
   );
 }
 
-export default PreAplicacionPage;
+export default EditarPreAplicacionPage;

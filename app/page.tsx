@@ -1,6 +1,4 @@
 
-
-import ChatBtn from "@/components/myComponents/landing/ChatBtn"
 import CitasCarousel from "@/components/myComponents/landing/CitasCarousel"
 import Collapse from "@/components/myComponents/landing/Collapse"
 
@@ -15,11 +13,9 @@ const HomePage = () => {
   return (
     <div className="flex flex-col ">
 
-      <ChatBtn />
+      {/* <ChatBtn /> */}
 
       <LandingMain />
-
-
 
       <div className="p-2 bg-black  text-white rounded-xl ">
         <Info />
@@ -36,7 +32,7 @@ const HomePage = () => {
 
 
       <Footer />
-      
+
     </div>
   )
 }

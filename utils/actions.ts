@@ -212,3 +212,32 @@ export const getUnaAplicacion = async () => {
 
   return aplicacion
 }
+
+
+export const updatePreAplicacion = async (
+  prevState: null,
+  formData: FormData
+): Promise<{ message: string }> => {
+  const user = await getAuthUser()
+
+  try {
+    const rawData = Object.fromEntries(formData)
+
+    console.log("rawData-Start")
+    console.log(rawData)
+    console.log("rawData-End================")
+    const validatedFields = validateWithZodSchema(preAplicacionSchema, rawData)
+
+    await db.preAplicacion.update({
+      where: {
+        perfilId: user.id,
+      },
+      data: validatedFields,
+    })
+
+  } catch (error) {
+    return renderError(error)
+  }
+
+  redirect('/mi-aplicacion')
+} 

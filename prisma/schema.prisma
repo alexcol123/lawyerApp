@@ -92,7 +92,7 @@ model PreAplicacion {
   updatedAt DateTime @updatedAt
 
   Perfil   Perfil @relation(fields: [perfilId], references: [clerkId])
-  perfilId String
+  perfilId String @unique
 }
 
 // model Aplicacion {

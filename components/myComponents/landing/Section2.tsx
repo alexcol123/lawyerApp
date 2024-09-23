@@ -1,8 +1,6 @@
 
 
 
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import {
   FaPhone,
   FaBalanceScale,
@@ -16,8 +14,13 @@ import {
   FaHandsHelping,
 } from "react-icons/fa";
 import Testimonios from "./Testimonios";
+import { VerSiCalificoBtn } from './MyButtons';
+
 
 const LandingMain = () => {
+
+
+
   return (
     <div className="flex flex-col">
       {/* Sección Principal */}
@@ -38,12 +41,8 @@ const LandingMain = () => {
             Solo te tomará{" "}
             <span className="font-bold text-pink-500">4 minutos</span> saber si calificas.
           </p>
-          <Button
-            asChild
-            className="bg-gradient-to-r from-purple-600 to-blue-500 hover:from-blue-500 hover:to-purple-600 text-white text-lg md:text-xl py-4 px-8 md:py-5 md:px-12 rounded-full shadow-xl transform hover:scale-105 transition-transform duration-300"
-          >
-            <Link href="/precalificacion">Ver si califico</Link>
-          </Button>
+
+          <VerSiCalificoBtn  />
 
           <div className="flex items-center mt-4">
             <FaPhone className="mr-2" />
@@ -150,12 +149,7 @@ const LandingMain = () => {
           <p className="text-lg md:text-xl mb-6">
             La pre-calificación dura menos de <span className="font-bold">4 minutos</span> y es completamente <span className="font-bold">GRATUITA</span>.
           </p>
-          <Button
-            asChild
-            className="bg-white text-blue-600 hover:bg-gray-200 text-lg md:text-xl py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300"
-          >
-            <Link href="/precalificacion">Saber si califico</Link>
-          </Button>
+          <VerSiCalificoBtn  color="bg-red-700 text-white"/>
           <p className="text-sm md:text-base mt-4">
             ¡No pierdas esta oportunidad de cambiar tu vida!
           </p>
@@ -269,15 +263,7 @@ const LandingMain = () => {
           </div>
           <div className="mt-8 md:mt-12 bg-primary/10 py-10 rounded-lg">
             <h2 className="my-4 text-xl md:text-2xl font-bold text-gray-800">Ver Si Calificas para Manteniendo a las Familias Unidas?</h2>
-            <Button
-              asChild
-              className="bg-gradient-to-r from-green-500 
-              
-
-                            to-teal-600 hover:from-teal-600 hover:to-green-500 text-white text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-full shadow-xl transform hover:scale-105 transition-transform duration-300"
-            >
-              <Link href="/precalificacion">Saber si califico</Link>
-            </Button>
+            <VerSiCalificoBtn />
             <p className="my-4 text-base md:text-lg text-gray-700">
               Respuesta en menos de 4 minutos.
             </p>
