@@ -253,8 +253,8 @@ const VerResultado = async () => {
                     <p className="mt-6 md:mt-8 text-center text-base md:text-lg text-gray-800">
                       ¿Tienes dudas o preguntas? Llámanos al
                       <br />
-                      <Link href="tel:1-800-123-4567" className="text-blue-600 font-bold">
-                        1-800-123-4567
+                      <Link href={`tel:${process.env.PHONE_LINK as string}`} className="text-blue-600 font-bold">
+                        {process.env.PHONE_NUMBER as string}
                       </Link>
                     </p>
                   </div>
@@ -285,10 +285,10 @@ const VerResultado = async () => {
                 Paga el resto $400 cuando tu aplicación esté lista. Tarifas de USCIS no incluidas.
               </p>
               <p className="mt-6 md:mt-8 text-center text-base md:text-lg text-gray-800">
-                ¿Tienes dudas? Llámanos al
+                ¿Tienes dudas o preguntas? Llámanos al
                 <br />
-                <Link href="tel:1-800-123-4567" className="text-blue-600 font-bold">
-                  1-800-123-4567
+                <Link href={`tel:${process.env.PHONE_LINK as string}`} className="text-blue-600 font-bold">
+                  {process.env.PHONE_NUMBER as string}
                 </Link>
               </p>
             </>

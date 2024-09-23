@@ -38,9 +38,9 @@ const LandingMain = () => {
           </Button>
           <div className="flex items-center mt-4">
             <FaPhone className="mr-2" />
-            <a href="tel:1-800-123-4567" className="text-white text-lg font-bold">
-              Llámanos al 1-800-123-4567
-            </a>
+            <Link   href={`tel:${process.env.PHONE_LINK as string}`} className="text-white text-lg font-bold">
+              Llámanos al   href={`tel:${process.env.PHONE_NUMBER as string}`}
+            </Link>
           </div>
         </div>
       </div>

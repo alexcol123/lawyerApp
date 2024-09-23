@@ -44,14 +44,15 @@ const LandingMain = () => {
           >
             <Link href="/precalificacion">Ver si califico</Link>
           </Button>
+
           <div className="flex items-center mt-4">
             <FaPhone className="mr-2" />
             <a
-              href="tel:1-800-123-4567"
+              href={`tel:${process.env.PHONE_LINK as string}`}
               className="text-white text-lg md:text-xl font-bold"
-              aria-label="Llámanos al 1-800-123-4567"
+              aria-label={`Llámanos al ${process.env.PHONE_NUMBER as string}`}
             >
-              Llámanos al 1-800-123-4567
+              Llámanos al {process.env.PHONE_NUMBER as string}
             </a>
           </div>
         </div>
@@ -200,6 +201,12 @@ const LandingMain = () => {
         </div>
       </div>
 
+
+
+      {/* Sección de Testimonios */}
+      <Testimonios />
+
+
       {/* Sección de Comparación de Precios */}
       <div className="bg-white py-8 px-4 md:py-12 md:px-12 text-center">
         <div className="container mx-auto">
@@ -207,7 +214,7 @@ const LandingMain = () => {
             Compara Nuestros Precios
           </h2>
           <p className="text-lg md:text-xl text-gray-700 mb-6 md:mb-8">
-            Ahorra hasta un <span className="text-green-600 font-bold">70%</span> en comparación con otras agencias con nuestros servicios legales digitales a precios accesibles.
+            Al ser 100% virtuales, eliminamos los costos tradicionales de operación. Te ofrecemos servicios legales eficientes y accesibles a precios <span className="text-green-600 font-bold">hasta un 75% más reducidos</span>, sin sacrificar calidad y ahorrándote tiempo.
           </p>
           <div className="overflow-x-auto">
             <table className="min-w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden text-xs md:text-base">
@@ -220,7 +227,7 @@ const LandingMain = () => {
               </thead>
               <tbody>
                 <tr className="hover:bg-gray-50">
-                  <td className="px-2 py-2 md:px-4 md:py-3 text-left text-gray-700 border-b">Programa Familias Unidas</td>
+                  <td className="px-2 py-2 md:px-4 md:py-3 text-left text-gray-700 border-b">Programa Manteniendo a las Familias Unidas?</td>
                   <td className="px-2 py-2 md:px-4 md:py-3 text-center text-red-600 font-semibold border-b">$4,000</td>
                   <td className="px-2 py-2 md:px-4 md:py-3 text-center text-green-600 font-semibold border-b">$499</td>
                 </tr>
@@ -261,7 +268,7 @@ const LandingMain = () => {
             </p>
           </div>
           <div className="mt-8 md:mt-12 bg-primary/10 py-10 rounded-lg">
-            <h2 className="my-4 text-xl md:text-2xl font-bold text-gray-800">Ver Si Calificas para Familias Unidas</h2>
+            <h2 className="my-4 text-xl md:text-2xl font-bold text-gray-800">Ver Si Calificas para Manteniendo a las Familias Unidas?</h2>
             <Button
               asChild
               className="bg-gradient-to-r from-green-500 
@@ -278,10 +285,6 @@ const LandingMain = () => {
         </div>
       </div>
 
-      {/* Sección de Testimonios */}
-      <Testimonios />
-
-      
     </div>
   );
 };

@@ -102,12 +102,12 @@ const SingleBlogPage = ({ params }: { params: { id: string } }) => {
                   <h3 className="text-lg font-medium text-gray-700">
                     ¿Prefieres hablar con nosotros directamente al  ?
                   </h3>
-                  <Link href="/contacto" passHref>
+                  <Link href={`tel:${process.env.PHONE_LINK as string}`}>
                     <Button
                       variant="outline"
                       className="border-gray-300 text-gray-800 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-medium transition-colors"
                     >
-                      Llamar Ahora 1-800-123-4567
+                      {process.env.PHONE_NUMBER as string}
                     </Button>
                   </Link>
                 </div>

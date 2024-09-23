@@ -29,9 +29,16 @@ const Footer = () => {
 
         {/* Información de Contacto */}
         <div className="text-center md:text-right">
-          <p className="text-sm">
-            Teléfono: <span className="hover:text-white cursor-pointer">1-800-123-4567</span>
+
+          <p className="hover:text-white cursor-pointer">
+            ¿Tienes dudas o preguntas? Llámanos al
+            <br />
+            <Link href={`tel:${process.env.PHONE_LINK as string}`} className="text-blue-500 font-bold">
+              {process.env.PHONE_NUMBER as string}
+            </Link>
           </p>
+
+
           <p className="text-sm">
             Email: <span className="hover:text-white cursor-pointer">info@tusitio.com</span>
           </p>
