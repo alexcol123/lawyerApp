@@ -42,7 +42,7 @@ const LandingMain = () => {
             <span className="font-bold text-pink-500">4 minutos</span> saber si calificas.
           </p>
 
-          <VerSiCalificoBtn  />
+          <VerSiCalificoBtn />
 
           <div className="flex items-center mt-4">
             <FaPhone className="mr-2" />
@@ -149,7 +149,7 @@ const LandingMain = () => {
           <p className="text-lg md:text-xl mb-6">
             La pre-calificación dura menos de <span className="font-bold">4 minutos</span> y es completamente <span className="font-bold">GRATUITA</span>.
           </p>
-          <VerSiCalificoBtn  color="bg-red-700 text-white"/>
+          <VerSiCalificoBtn color="bg-red-700 text-white" />
           <p className="text-sm md:text-base mt-4">
             ¡No pierdas esta oportunidad de cambiar tu vida!
           </p>
