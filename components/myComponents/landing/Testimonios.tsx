@@ -47,9 +47,10 @@ const Testimonios = () => {
                 <Image
                   src={testimonial.image}
                   alt={`Foto de ${testimonial.name}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-full"
+                  fill
+             
+              
+                  className="rounded-full object-cover"
                 />
               </div>
 

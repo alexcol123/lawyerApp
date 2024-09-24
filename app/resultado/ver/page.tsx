@@ -513,46 +513,69 @@ const VerResultado = async () => {
 
 
         {/* Pie de la tarjeta */}
-        <CardFooter className="flex flex-col items-center my-6 md:my-10 space-y-6">
+
+
+
+
+        <CardFooter className="flex flex-col items-center my-6  space-y-4">
           {califica ? (
-            <>
-              {/* Deposit Message */}
-              <p className="text-center text-xl md:text-2xl text-gray-800 font-semibold">
-                <strong>
-                  ¡Comienza ahora con solo <span className="text-blue-600">$99</span> de depósito!
-                </strong>
+            <div className="text-center px-4 py-6 rounded-lg bg-white shadow-md space-y-6">
+              {/* Sección de Mensaje Promocional */}
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">
+                ¡Elige el camino inteligente!
+              </h2>
+              <p className="text-lg md:text-xl text-gray-700">
+                ¿Sabías que otras agencias cobran hasta
+                <span className="text-red-500 font-semibold"> $3,500</span> por el mismo proceso?
+              </p>
+              <p className="text-lg md:text-xl text-gray-700">
+                Con nosotros, completa tu trámite de
+                <span className="text-blue-600 font-bold"> residencia legal </span> por solo
+                <span className="text-blue-600 font-bold">$499</span>.
+              </p>
+              <p className="text-lg md:text-xl text-green-600 font-semibold">
+                ¡Ahorra más de $3,000 con nosotros!
+              </p>
+              <p className="text-lg md:text-xl text-gray-700">
+                <span className="font-bold">Accede hoy mismo</span> con un depósito inicial de solo
+                <span className="text-blue-600 font-bold">$99</span>.
+              </p>
+              <p className="text-md md:text-lg text-gray-500">
+                Oferta válida hasta el
+                <span className="text-red-500 font-semibold"> 31 de octubre</span>. ¡No dejes pasar esta oportunidad!
               </p>
 
-              {/* Action Button */}
-              <Button
-                asChild
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white text-lg md:text-xl py-4 md:py-6 px-8 md:px-12 rounded-full shadow-xl transform hover:scale-105 transition-transform duration-300"
-              >
-                <Link href={`/checkout?perfilId=${application.perfilId}`}>
-                  Iniciar Proceso con <span className="animate-pulse ml-2">$99</span>
-                </Link>
-              </Button>
+              {/* Sección de Botón de Acción */}
+              <div className="mt-8">
+                <Button
+                  className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-teal-600 hover:to-green-500 text-white text-lg md:text-xl py-4 md:py-6 px-10 md:px-14 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300"
+                >
+                  <Link href={`/checkout?perfilId=${application.perfilId}`}>
+                    ¡Reserva tu lugar ahora por solo <span className="animate-pulse ml-1">$99!</span>
+                  </Link>
+                </Button>
+                <p className="text-xs md:text-sm font-semibold text-gray-600 mt-4">
+                  Si no obtienes tu cita, te devolvemos tu dinero. ¡No tienes nada que perder!
+                </p>
+              </div>
 
-              {/* Remaining Payment Info */}
-              <p className="mt-4 text-sm md:text-base text-gray-600 text-center">
-                El resto de $400 se pagará cuando tu aplicación esté lista. Tarifas de USCIS no incluidas.
-              </p>
-
-              {/* Contact Information */}
-              <p className="mt-6 md:mt-8 text-center text-base md:text-lg text-gray-800">
-                ¿Tienes dudas o preguntas? Llámanos al
-                <br />
-                <Link href={`tel:${process.env.PHONE_LINK as string}`} className="text-blue-600 font-bold">
+              {/* Sección de Contacto */}
+              <div className="mt-8">
+                <p className="text-base md:text-lg text-gray-800">
+                  ¿Tienes preguntas? Estamos aquí para ayudarte:
+                </p>
+                <Link href={`tel:${process.env.PHONE_LINK as string}`} className="text-blue-600 font-bold text-lg md:text-xl">
                   {process.env.PHONE_NUMBER as string}
                 </Link>
-              </p>
-            </>
+              </div>
+            </div>
           ) : (
             <div className="text-center text-base md:text-lg text-gray-700">
               Un representante te contactará pronto para ofrecerte alternativas.
             </div>
           )}
         </CardFooter>
+
       </Card>
     </div>
   );
@@ -560,3 +583,54 @@ const VerResultado = async () => {
 
 export default VerResultado;
 
+
+
+// <div className="text-center bg-gray-900 text-white p-8 rounded-lg shadow-md space-y-6">
+//     {/* Sección de Mensaje Promocional */}
+//     <h2 className="text-2xl md:text-3xl font-bold mb-4">
+//       ¡Elige el camino inteligente!
+//     </h2>
+//     <p className="text-lg md:text-xl">
+//       ¿Sabías que otras agencias cobran hasta
+//       <span className="text-red-500 font-semibold"> $3,500</span> por el mismo proceso?
+//     </p>
+//     <p className="text-lg md:text-xl">
+//       Con nosotros, empieza tu trámite de
+//       <span className="text-blue-400 font-bold"> residencia legal </span> por solo
+//       <span className="text-blue-400 font-bold"> $499</span>.
+//     </p>
+//     <p className="text-lg md:text-xl">
+//       <span className="font-bold">Accede hoy mismo</span> con un depósito inicial de
+//       <span className="text-blue-400 font-bold"> $99</span>.
+//     </p>
+//     <p className="text-md md:text-lg text-gray-400">
+//       Oferta limitada hasta el
+//       <span className="text-red-500 font-semibold"> 20 de octubre</span>.
+//     </p>
+
+//     {/* Sección de Botón de Acción */}
+//     <div className="mt-8">
+//       <Button
+//         className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-teal-600 hover:to-green-500 text-lg md:text-xl py-4 md:py-6 px-10 md:px-14 rounded-full shadow-xl transform hover:scale-105 transition-transform duration-300"
+//       >
+//         <Link href={`/checkout?perfilId=${application.perfilId}`}>
+//           ¡Transforma tu vida por solo <span className="text-white animate-pulse ml-1">$99!</span>
+//         </Link>
+//       </Button>
+//     </div>
+
+//     {/* Información Adicional */}
+//     <p className="text-sm md:text-base text-gray-400 mt-6">
+//       *El resto de $400 se pagará al completar tu aplicación. Tarifas de USCIS no incluidas.
+//     </p>
+
+//     {/* Sección de Contacto */}
+//     <div className="mt-8">
+//       <p className="text-base md:text-lg">
+//         ¿Tienes preguntas? Estamos aquí para ayudarte:
+//       </p>
+//       <Link href={`tel:${process.env.PHONE_LINK as string}`} className="text-blue-400 font-bold text-lg md:text-xl">
+//         {process.env.PHONE_NUMBER as string}
+//       </Link>
+//     </div>
+//   </div>

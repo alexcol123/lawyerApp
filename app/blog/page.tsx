@@ -84,9 +84,9 @@ function BlogLanding() {
                   <Image
                     src={blog.image ? blog.image : '/images/blog/blog.webp'}
                     alt="Artículo"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-t-lg"
+                 
+                 
+                    className="rounded-t-lg object-cover"
                   />
                 </div>
                 <div className="p-4">
