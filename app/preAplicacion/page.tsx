@@ -3,7 +3,6 @@ import FormCheckBox from "@/components/myComponents/form/FormCheckBox";
 import FormContainer from "@/components/myComponents/form/FormContainer";
 import FormInput from "@/components/myComponents/form/FormInput";
 import FormSelect from "@/components/myComponents/form/FormSelect";
-import FormTextAreaInput from "@/components/myComponents/form/FormTextAreaInput";
 import { Separator } from "@/components/ui/separator";
 
 import { crearPreAplicacion } from "@/utils/actions";
