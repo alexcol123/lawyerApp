@@ -572,15 +572,9 @@ const VerResultado = async () => {
                   {process.env.PHONE_NUMBER as string}
                 </Link>
 
-                <div>
-                  <div className="mt-10">
-                  <a href={`tel:${1-804-555-5555}`}>tel</a>
-                  </div>
-                </div>
 
-                <p><a href="tel:+4733378901">+47 333 78 901</a></p>
 
-                
+
               </div>
             </div>
           ) : (
