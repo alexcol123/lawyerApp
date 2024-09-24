@@ -522,40 +522,44 @@ const VerResultado = async () => {
             <div className="text-center px-4 py-6 rounded-lg bg-white shadow-md space-y-6">
               {/* Sección de Mensaje Promocional */}
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">
-                ¡Elige el camino inteligente!
+                ¡Actúa rápido y ahorra!
               </h2>
               <p className="text-lg md:text-xl text-gray-700">
-                ¿Sabías que otras agencias cobran hasta
-                <span className="text-red-500 font-semibold"> $3,500</span> por el mismo proceso?
+                Otras agencias cobran hasta
+                <span className="text-red-500 font-semibold">$3,500</span> por el mismo trámite.
               </p>
               <p className="text-lg md:text-xl text-gray-700">
-                Con nosotros, completa tu trámite de
-                <span className="text-blue-600 font-bold"> residencia legal </span> por solo
+                Con nosotros, el precio es de solo
                 <span className="text-blue-600 font-bold">$499</span>.
               </p>
               <p className="text-lg md:text-xl text-green-600 font-semibold">
-                ¡Ahorra más de $3,000 con nosotros!
+                ¡Ahorra más de $3,000 y asegura tu lugar hoy!
               </p>
               <p className="text-lg md:text-xl text-gray-700">
-                <span className="font-bold">Accede hoy mismo</span> con un depósito inicial de solo
+                Nosotros nos encargamos de todo el proceso. Tú solo necesitas empezar con un depósito de
                 <span className="text-blue-600 font-bold">$99</span>.
               </p>
               <p className="text-md md:text-lg text-gray-500">
                 Oferta válida hasta el
-                <span className="text-red-500 font-semibold"> 31 de octubre</span>. ¡No dejes pasar esta oportunidad!
+                <span className="text-red-500 font-semibold"> 31 de octubre</span>. ¡Últimos días para aprovechar!
+              </p>
+
+              {/* Refuerzo de Beneficio */}
+              <p className="text-md md:text-lg text-gray-600">
+                ¡Deja el papeleo en nuestras manos y concéntrate en tu futuro!
               </p>
 
               {/* Sección de Botón de Acción */}
               <div className="mt-8">
                 <Button
-                  className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-teal-600 hover:to-green-500 text-white text-lg md:text-xl py-4 md:py-6 px-10 md:px-14 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300"
+                  className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-pink-600 hover:to-purple-500 text-white text-lg md:text-xl py-5 md:py-8 px-8 md:px-14 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300"
                 >
                   <Link href={`/checkout?perfilId=${application.perfilId}`}>
-                    ¡Reserva tu lugar ahora por solo <span className="animate-pulse ml-1">$99!</span>
+                    ¡Actúa ahora por <span className="animate-pulse ml-1">$99!</span>
                   </Link>
                 </Button>
                 <p className="text-xs md:text-sm font-semibold text-gray-600 mt-4">
-                  Si no obtienes tu cita, te devolvemos tu dinero. ¡No tienes nada que perder!
+                  Si no obtienes tu cita, te devolvemos tu dinero. ¡Sin compromisos!
                 </p>
               </div>
 
@@ -564,9 +568,19 @@ const VerResultado = async () => {
                 <p className="text-base md:text-lg text-gray-800">
                   ¿Tienes preguntas? Estamos aquí para ayudarte:
                 </p>
-                <Link href={`tel:${process.env.PHONE_LINK as string}`} className="text-blue-600 font-bold text-lg md:text-xl">
+                <Link href={`tel:+${process.env.PHONE_NUMBER as string}`} className="text-blue-600 font-bold text-lg md:text-xl">
                   {process.env.PHONE_NUMBER as string}
                 </Link>
+
+                <div>
+                  <div className="mt-10">
+                  <a href={`tel:${1-804-555-5555}`}>tel</a>
+                  </div>
+                </div>
+
+                <p><a href="tel:+4733378901">+47 333 78 901</a></p>
+
+                
               </div>
             </div>
           ) : (
