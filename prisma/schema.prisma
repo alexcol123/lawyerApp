@@ -35,11 +35,12 @@ model Perfil {
   emailAtSignup String
   imagenPerfil  String
 
-  nombre                          String
-  apellido                        String
-  telefono                        String
-  email                           String
+  nombre   String
+  apellido String
+  telefono String
+
   applicationDepositPaid99Dollars Boolean @default(false)
+  firstCallCompleted              Boolean @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -54,39 +55,35 @@ model PreAplicacion {
   // esSpouse    Boolean @default(true)
   // esStepchild Boolean @default(false)
 
-  applicantLegalFirstName  String
-  applicantLegalMiddleName String?
-  applicantLegalLastName   String
-  applicantDOB             DateTime
+  applicantLegalFirstName String
+  // applicantLegalMiddleName String?
+  applicantLegalLastName  String
+  // applicantDOB            DateTime
 
   addressFisical String
 
-  phone String
-  email String
-
+  phone          String
   paisNacimiento String
 
-  sexo     String
-  etnicity String // 1. Hispanic or Latino 2. Not Hispanic or Latino
-  race     String // 1.American Indian or Alaska Native 2. Asian 3. Black or African American 4. Native Hawaiian or Other Pacific Islander 5. White
+  // sexo String
+  // etnicity String // 1. Hispanic or Latino 2. Not Hispanic or Latino
+  // race     String // 1.American Indian or Alaska Native 2. Asian 3. Black or African American 4. Native Hawaiian or Other Pacific Islander 5. White
 
   dateOfMarriage DateTime
 
   esSpouse    Boolean @default(true)
   esStepchild Boolean @default(false)
 
-  spouseThatIsCitizenLegalFirstName  String
-  spouseThatIsCitizenLegalMiddleName String?
-  spouseThatIsCitizenLegalLastName   String
-  spouseThatIsCitizenDOB             DateTime
+  spouseThatIsCitizenLegalFirstName String
+  // spouseThatIsCitizenLegalMiddleName String?
+  spouseThatIsCitizenLegalLastName  String
+  // spouseThatIsCitizenDOB             DateTime
 
   applicantWhenArrivedToUS DateTime
 
   applicantHasBeenDeported            Boolean @default(false)
   applicantHasArrests                 Boolean @default(false)
   applicantHasArrestsInOtherCountries Boolean @default(false)
-
-  applicantOtherInfo String? // Carta de aprovacion de I-130 750 characteres or more
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

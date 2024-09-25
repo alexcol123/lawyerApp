@@ -41,9 +41,9 @@ const PerfilPage = async () => {
       
             <FormInput type='tel' name='telefono' label='telefono (De Estados Unidos)' 
             defaultValue={perfil.telefono} />
-
+{/* 
             <FormInput type='text' name='email' label='email'
-                      defaultValue={perfil.email}  />
+                      defaultValue={perfil.email}  /> */}
 
           </div>
           <SubmitButton text='Actualizar Perfil' className='mt-8' />

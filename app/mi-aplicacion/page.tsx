@@ -25,20 +25,20 @@ const MiAplicacion = async () => {
           <div className="space-y-4 text-base sm:text-lg text-foreground dark:text-card-foreground">
             <h2 className="text-xl sm:text-2xl font-semibold text-blue-600">Información Personal</h2>
             <div className="grid gap-2 sm:gap-4">
-              <InfoRow label="Nombre" value={`${application.applicantLegalFirstName} ${application.applicantLegalMiddleName} ${application.applicantLegalLastName}`} />
-              <InfoRow label="Fecha de Nacimiento" value={formatDate(application.applicantDOB)} icon={<CalendarIcon className="ml-2 text-muted-foreground w-4 sm:w-5 h-4 sm:h-5" />} />
+              <InfoRow label="Nombre" value={`${application.applicantLegalFirstName}  ${application.applicantLegalLastName}`} />
+              {/* <InfoRow label="Fecha de Nacimiento" value={formatDate(application.applicantDOB)} icon={<CalendarIcon className="ml-2 text-muted-foreground w-4 sm:w-5 h-4 sm:h-5" />} /> */}
               <InfoRow label="Dirección" value={application.addressFisical} />
               <InfoRow label="Teléfono" value={application.phone} />
-              <InfoRow label="Email" value={application.email} />
+              {/* <InfoRow label="Email" value={application.email} /> */}
               <InfoRow label="País de Nacimiento" value={application.paisNacimiento} />
-              <InfoRow label="Sexo" value={application.sexo} />
-              <InfoRow label="Origen étnico" value={application.etnicity} />
-              <InfoRow label="Raza" value={application.race} />
+              {/* <InfoRow label="Sexo" value={application.sexo} /> */}
+              {/* <InfoRow label="Origen étnico" value={application.etnicity} />
+              <InfoRow label="Raza" value={application.race} /> */}
               {application.dateOfMarriage && (
                 <InfoRow label="Fecha de Matrimonio" value={formatDate(application.dateOfMarriage)} icon={<CalendarIcon className="ml-2 text-muted-foreground w-4 sm:w-5 h-4 sm:h-5" />} />
               )}
-              <InfoRow label="Esposo Ciudadano" value={`${application.spouseThatIsCitizenLegalFirstName} ${application.spouseThatIsCitizenLegalMiddleName} ${application.spouseThatIsCitizenLegalLastName}`} />
-              <InfoRow label="Fecha de Nacimiento del Esposo/a" value={formatDate(application.spouseThatIsCitizenDOB)} icon={<CalendarIcon className="ml-2 text-muted-foreground w-4 sm:w-5 h-4 sm:h-5" />} />
+              {/* <InfoRow label="Esposo Ciudadano" value={`${application.spouseThatIsCitizenLegalFirstName} ${application.spouseThatIsCitizenLegalMiddleName} ${application.spouseThatIsCitizenLegalLastName}`} /> */}
+              {/* <InfoRow label="Fecha de Nacimiento del Esposo/a" value={formatDate(application.spouseThatIsCitizenDOB)} icon={<CalendarIcon className="ml-2 text-muted-foreground w-4 sm:w-5 h-4 sm:h-5" />} /> */}
               {application.applicantWhenArrivedToUS && (
                 <InfoRow label="Fecha de Llegada a EE.UU." value={formatDate(application.applicantWhenArrivedToUS)} icon={<CalendarIcon className="ml-2 text-muted-foreground w-4 sm:w-5 h-4 sm:h-5" />} />
               )}
@@ -75,7 +75,7 @@ const MiAplicacion = async () => {
 
 // Componente para filas de información
 const InfoRow = ({ label, value, icon = null }: { label: string, value: React.ReactNode, icon?: React.ReactNode }) => (
-  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b pb-2 sm:pb-3 mb-2 sm:mb-3">
+  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center pb-2 sm:pb-3 mb-2 sm:mb-3">
     <strong className="sm:w-1/3 text-gray-700 dark:text-gray-300">{label}:</strong>
     <div className="flex items-center sm:w-2/3">
       <span className="text-gray-800 dark:text-white">{value}</span>

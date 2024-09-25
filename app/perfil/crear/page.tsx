@@ -25,7 +25,6 @@ async function CreateProfile() {
             <FormInput type='text' name='nombre' label='nombre' />
             <FormInput type='text' name='apellido' label='apellido' />
             <FormInput type='tel' name='telefono' label='telefono (De Estados Unidos)' />
-            <FormInput type='text' name='email' label='email' />
 
           </div>
           <SubmitButton text='Create Profile' className='mt-8' />

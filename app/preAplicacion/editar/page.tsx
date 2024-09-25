@@ -2,7 +2,7 @@ import { SubmitButton } from "@/components/myComponents/form/Buttons";
 import FormCheckBox from "@/components/myComponents/form/FormCheckBox";
 import FormContainer from "@/components/myComponents/form/FormContainer";
 import FormInput from "@/components/myComponents/form/FormInput";
-import FormSelect from "@/components/myComponents/form/FormSelect";
+// import FormSelect from "@/components/myComponents/form/FormSelect";
 
 import { Separator } from "@/components/ui/separator";
 
@@ -51,7 +51,7 @@ const EditarPreAplicacionPage = async () => {
               defaultValue={currentApplicacion.applicantLegalFirstName}
             />
 
-            <FormInput
+            {/* <FormInput
               name="applicantLegalMiddleName"
               type="text"
               required={false}
@@ -59,7 +59,7 @@ const EditarPreAplicacionPage = async () => {
               placeholder="Ej: Isabel"
               defaultValue={currentApplicacion.applicantLegalMiddleName ?? ''}
 
-            />
+            /> */}
 
             <FormInput
               name="applicantLegalLastName"
@@ -70,13 +70,13 @@ const EditarPreAplicacionPage = async () => {
 
             />
 
-            <FormInput
+            {/* <FormInput
               name="applicantDOB"
               type="date"
               label="Fecha de Nacimiento"
               placeholder="Ej: 15-10-2005"
               defaultValue={currentApplicacion.applicantDOB?.toISOString().split('T')[0]}
-            />
+            /> */}
 
             <FormInput
               name="addressFisical"
@@ -94,23 +94,23 @@ const EditarPreAplicacionPage = async () => {
               defaultValue={currentApplicacion.phone}
             />
 
-            <FormInput
+            {/* <FormInput
               name="email"
               type="email"
               label="Correo Electrónico"
               placeholder="Ej: jenny@yahoo.com"
               defaultValue={currentApplicacion.email}
-            />
+            /> */}
 
             <FormInput
               name="paisNacimiento"
               type="text"
-              label="País de Nacimiento"
+              label="País donde Naciciste"
               placeholder="México"
               defaultValue={currentApplicacion.paisNacimiento}
             />
 
-            <FormSelect
+            {/* <FormSelect
               name="sexo"
               label="Sexo"
               list={[
@@ -142,12 +142,12 @@ const EditarPreAplicacionPage = async () => {
                 { name: 'Blanco' },
               ]}
               defaultValue={currentApplicacion.race}
-            />
+            /> */}
 
             <FormInput
               name="dateOfMarriage"
               type="date"
-              label="Fecha en que te casaste con el ciudadano americano"
+           label="Fecha en que te casaste con un Ciudadano Americano (Si no recuerdas, pon un aproximado)"
               placeholder="Ej: 15-10-2018"
               defaultValue={currentApplicacion.dateOfMarriage?.toISOString().split('T')[0]}
             />
@@ -157,7 +157,7 @@ const EditarPreAplicacionPage = async () => {
             <FormInput
               name="applicantWhenArrivedToUS"
               type="date"
-              label="Fecha en que llegaste a los Estados Unidos (Si no sabes, da una estimación)"
+             label="Fecha en que entraste a Estados Unidos (Si no recuerdas, pon un aproximado)"
               placeholder="Ej: 15-10-2005"
               defaultValue={currentApplicacion.applicantWhenArrivedToUS?.toISOString().split('T')[0]}
             />
@@ -169,7 +169,7 @@ const EditarPreAplicacionPage = async () => {
 
           <div className="mb-8">
             <FormCheckBox name="esSpouse" texto="Marca si eres cónyuge (esposo/a) de un ciudadano americano"
-            checked={currentApplicacion.esSpouse}
+              checked={currentApplicacion.esSpouse}
 
             />
             <FormCheckBox name="esStepchild" texto="Marca si eres hijastro/a de un ciudadano americano"
@@ -177,10 +177,10 @@ const EditarPreAplicacionPage = async () => {
             />
           </div>
           <FormCheckBox name="applicantHasBeenDeported" texto="Marca si has sido deportado de los Estados Unidos"
-         
+
           />
           <FormCheckBox name="applicantHasArrests" texto="Marca si has tenido arrestos dentro de los Estados Unidos" />
-        
+
 
 
           <Separator orientation="horizontal" className="my-6" />
@@ -196,13 +196,13 @@ const EditarPreAplicacionPage = async () => {
               defaultValue={currentApplicacion.spouseThatIsCitizenLegalFirstName}
             />
 
-            <FormInput
+            {/* <FormInput
               name="spouseThatIsCitizenLegalMiddleName"
               type="text"
               required={false}
               label="Segundo Nombre de tu Cónyuge (opcional)  "
               defaultValue={currentApplicacion.spouseThatIsCitizenLegalMiddleName ?? ''}
-            />
+            /> */}
 
             <FormInput
               name="spouseThatIsCitizenLegalLastName"
@@ -211,14 +211,14 @@ const EditarPreAplicacionPage = async () => {
               placeholder="Ej: Smith"
               defaultValue={currentApplicacion.spouseThatIsCitizenLegalLastName}
             />
-
+            {/* 
             <FormInput
               name="spouseThatIsCitizenDOB"
               type="date"
               label="Fecha de Nacimiento de tu Cónyuge"
               placeholder="Ej: 15 de julio de 1980"
               defaultValue={currentApplicacion.spouseThatIsCitizenDOB?.toISOString().split('T')[0]}
-            />
+            /> */}
           </div>
 
 
@@ -226,7 +226,7 @@ const EditarPreAplicacionPage = async () => {
 
           <div className="flex items-center justify-center w-full">
 
-            
+
             <SubmitButton text="Submitir Cambios" className="mt-12" />
           </div>
         </FormContainer>

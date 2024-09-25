@@ -40,10 +40,6 @@ export const profileSchema = z.object({
         message: 'telefono debe tener 10 dígitos exactamente. Ejemplo: 123-456-7890',
       }),
 
-  email:
-    z.string()
-      .email({ message: ' El email debe ser en este formato Ejemplo:  Jose@gmail.com ' }),
-
 
 })
 
@@ -161,8 +157,8 @@ export const preAplicacionSchema = z.object({
       .min(2, { message: 'El Nombre es requrido y debe tener al menos 2 caracteres.' })
       .max(70, { message: 'El Nombre es requrido y debe tener al maximo de 70 caracteres' }),
 
-  applicantLegalMiddleName:
-    z.string().optional(),
+  // applicantLegalMiddleName:
+  //   z.string().optional(),
 
 
   applicantLegalLastName:
@@ -170,8 +166,8 @@ export const preAplicacionSchema = z.object({
       .min(2, { message: 'El Apellido es requrido y debe tener al menos 2 caracteres.' })
       .max(70, { message: 'El Apellido es requrido y debe tener al maximo de 70 caracteres' }),
 
-  applicantDOB:
-    z.coerce.date({ message: 'Fecha de Nacimiento es requerida' }),
+  // applicantDOB:
+  //   z.coerce.date({ message: 'Fecha de Nacimiento es requerida' }),
 
 
   addressFisical:
@@ -184,21 +180,21 @@ export const preAplicacionSchema = z.object({
         message: 'telefono debe tener 10 dígitos exactamente. Ejemplo: 718-888-8888',
       }),
 
-  email:
-    z.string()
-      .email({ message: ' El email debe ser en este formato Ejemplo: maria@gmail.com ' }),
+  // email:
+  //   z.string()
+  //     .email({ message: ' El email debe ser en este formato Ejemplo: maria@gmail.com ' }).optional(),
 
   paisNacimiento:
-    z.string({ message: 'El país de nacimiento es requerido' }),
+    z.string({ message: 'El país donde nacimiento es requerido' }),
 
-  sexo:
-    z.string({ message: 'El sexo debe ser Masculino, Femenino o Prefiero no decir' }),
+  // sexo:
+  //   z.string({ message: 'El sexo debe ser Masculino, Femenino o Prefiero no decir' }),
 
-  etnicity:
-    z.string({ message: 'El grupo étnico debe ser Hispanic or Latino o No soy hispano o latino' }),
+  // etnicity:
+  //   z.string({ message: 'El grupo étnico debe ser Hispanic or Latino o No soy hispano o latino' }),
 
-  race:
-    z.string({ message: 'La raza es requerida' }),
+  // race:
+  //   z.string({ message: 'La raza es requerida' }),
 
 
   dateOfMarriage: z.coerce.date({ message: 'Fecha de Matrimonio es requerida' }),
@@ -208,10 +204,10 @@ export const preAplicacionSchema = z.object({
 
 
   spouseThatIsCitizenLegalFirstName: z.string(),
-  spouseThatIsCitizenLegalMiddleName: z.string().optional(),
+  // spouseThatIsCitizenLegalMiddleName: z.string().optional(),
   spouseThatIsCitizenLegalLastName: z.string(),
 
-  spouseThatIsCitizenDOB: z.coerce.date({ message: 'Fecha de Nacimiento del Esposo/a es requerido' }),
+  // spouseThatIsCitizenDOB: z.coerce.date({ message: 'Fecha de Nacimiento del Esposo/a es requerido' }),
 
   applicantWhenArrivedToUS:
     z.coerce.date({ message: 'Fecha de Llegada a los Estados Unidos, es requerida' }),

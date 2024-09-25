@@ -2,12 +2,19 @@ import { SubmitButton } from "@/components/myComponents/form/Buttons";
 import FormCheckBox from "@/components/myComponents/form/FormCheckBox";
 import FormContainer from "@/components/myComponents/form/FormContainer";
 import FormInput from "@/components/myComponents/form/FormInput";
-import FormSelect from "@/components/myComponents/form/FormSelect";
+// import FormSelect from "@/components/myComponents/form/FormSelect";
 import { Separator } from "@/components/ui/separator";
 
-import { crearPreAplicacion } from "@/utils/actions";
+import { crearPreAplicacion, fetchProfile } from "@/utils/actions";
+import { redirect } from "next/navigation";
 
-const PreAplicacionPage = () => {
+
+const PreAplicacionPage = async () => {
+
+  const perfil = await fetchProfile()
+
+  if (!perfil) return redirect('/perfil/crear')
+
   return (
     <div>
 
@@ -54,29 +61,31 @@ const PreAplicacionPage = () => {
               type="text"
               label="Nombre"
               placeholder="Ej: María"
+              defaultValue={perfil?.nombre || ''}
             />
 
-            <FormInput
+            {/* <FormInput
               name="applicantLegalMiddleName"
               type="text"
               required={false}
               label="Segundo Nombre (opcional)"
               placeholder="Ej: Isabel"
-            />
+            /> */}
 
             <FormInput
               name="applicantLegalLastName"
               type="text"
               label="Apellido"
               placeholder="Ej: Morales"
+              defaultValue={perfil?.apellido || ''}
             />
 
-            <FormInput
+            {/* <FormInput
               name="applicantDOB"
               type="date"
               label="Fecha de Nacimiento"
               placeholder="Ej: 15-10-2005"
-            />
+            /> */}
 
             <FormInput
               name="addressFisical"
@@ -90,23 +99,24 @@ const PreAplicacionPage = () => {
               type="text"
               label="Teléfono"
               placeholder="Ej: 407-888-8888"
+              defaultValue={perfil?.telefono || ''}
             />
-
+            {/* 
             <FormInput
               name="email"
               type="email"
               label="Correo Electrónico"
               placeholder="Ej: jenny@yahoo.com"
-            />
+            /> */}
 
             <FormInput
               name="paisNacimiento"
               type="text"
-              label="País de Nacimiento"
+              label="País donde Naciciste"
               placeholder="México"
             />
 
-            <FormSelect
+            {/* <FormSelect
               name="sexo"
               label="Sexo"
               list={[
@@ -114,18 +124,18 @@ const PreAplicacionPage = () => {
                 { name: 'Femenino' },
                 { name: 'Prefiero no decir' }
               ]}
-            />
+            /> */}
 
-            <FormSelect
+            {/* <FormSelect
               name="etnicity"
               label="Grupo Étnico"
               list={[
                 { name: 'Hispano o Latino' },
                 { name: 'No soy hispano o latino' },
               ]}
-            />
+            /> */}
 
-            <FormSelect
+            {/* <FormSelect
               name="race"
               label="Raza"
               list={[
@@ -135,12 +145,12 @@ const PreAplicacionPage = () => {
                 { name: 'Nativo de Hawái u Otro Isleño del Pacífico' },
                 { name: 'Blanco' },
               ]}
-            />
+            /> */}
 
             <FormInput
               name="dateOfMarriage"
               type="date"
-              label="Fecha en que te casaste con el ciudadano americano"
+            label="Fecha en que te casaste con un Ciudadano Americano (Si no recuerdas, pon un aproximado)"
               placeholder="Ej: 15-10-2018"
             />
           </div>
@@ -149,7 +159,7 @@ const PreAplicacionPage = () => {
             <FormInput
               name="applicantWhenArrivedToUS"
               type="date"
-              label="Fecha en que llegaste a los Estados Unidos (Si no sabes, da una estimación)"
+            label="Fecha en que entraste a Estados Unidos (Si no recuerdas, pon un aproximado)"
               placeholder="Ej: 15-10-2005"
             />
           </div>
@@ -164,7 +174,7 @@ const PreAplicacionPage = () => {
           </div>
           <FormCheckBox name="applicantHasBeenDeported" texto="Marca si has sido deportado de los Estados Unidos" />
           <FormCheckBox name="applicantHasArrests" texto="Marca si has tenido arrestos dentro de los Estados Unidos" />
-  
+
 
           <Separator orientation="horizontal" className="my-6" />
 
@@ -178,13 +188,13 @@ const PreAplicacionPage = () => {
               placeholder="Ej: James"
             />
 
-            <FormInput
+            {/* <FormInput
               name="spouseThatIsCitizenLegalMiddleName"
               type="text"
               required={false}
               label="Segundo Nombre de tu Cónyuge (opcional)  "
               placeholder="Ej: Steven "
-            />
+            /> */}
 
             <FormInput
               name="spouseThatIsCitizenLegalLastName"
@@ -193,12 +203,12 @@ const PreAplicacionPage = () => {
               placeholder="Ej: Smith"
             />
 
-            <FormInput
+            {/* <FormInput
               name="spouseThatIsCitizenDOB"
               type="date"
               label="Fecha de Nacimiento de tu Cónyuge"
               placeholder="Ej: 15 de julio de 1980"
-            />
+            /> */}
           </div>
 
 
