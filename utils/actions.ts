@@ -198,10 +198,10 @@ export const crearPreAplicacion = async (prevState: null, formData: FormData) =>
     return renderError(error)
   }
 
-  redirect('/mi-aplicacion')
+  redirect('/mi-preAplicacion')
 }
 
-export const getUnaAplicacion = async () => {
+export const getUnaPreAplicacion = async () => {
   const user = await getAuthUser()
 
   const aplicacion = await db.preAplicacion.findFirst({
@@ -239,5 +239,5 @@ export const updatePreAplicacion = async (
     return renderError(error)
   }
 
-  redirect('/mi-aplicacion')
+  redirect('/mi-preAplicacion')
 } 

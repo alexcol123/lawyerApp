@@ -5,7 +5,7 @@
 
 
 
-import { getUnaAplicacion } from "@/utils/actions";
+import { getUnaPreAplicacion } from "@/utils/actions";
 import {
   Card,
   CardContent,
@@ -36,7 +36,7 @@ import { FaRegArrowAltCircleDown } from "react-icons/fa";
 
 
 const VerResultado = async () => {
-  const application = await getUnaAplicacion();
+  const application = await getUnaPreAplicacion();
 
 
 

@@ -1,4 +1,4 @@
-import { getUnaAplicacion } from "@/utils/actions";
+import { getUnaPreAplicacion } from "@/utils/actions";
 import { formatDate } from "@/utils/format";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,9 +6,9 @@ import { CalendarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const MiAplicacion = async () => {
+const MiPreAplicacion = async () => {
 
-  const application = await getUnaAplicacion();
+  const application = await getUnaPreAplicacion();
 
   if (!application) return <div className="min-h-screen flex items-center justify-center text-muted-foreground">No hay aplicaciones</div>;
 
@@ -17,7 +17,7 @@ const MiAplicacion = async () => {
       <Card className="shadow-2xl border border-border rounded-xl max-w-xl w-full bg-card dark:bg-card">
         <CardHeader className="p-4 sm:p-6">
           <CardTitle className="text-center text-3xl sm:text-4xl font-bold text-primary dark:text-primary-foreground">
-            Tu Aplicación
+            Tu Pre-Aplicación
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6 p-4 sm:p-6 border m-2 sm:m-3 rounded-xl">
@@ -84,4 +84,4 @@ const InfoRow = ({ label, value, icon = null }: { label: string, value: React.Re
   </div>
 );
 
-export default MiAplicacion;
+export default MiPreAplicacion;

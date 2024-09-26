@@ -53,5 +53,5 @@ export const GET = async (req: NextRequest) => {
     })
   }
   // add 
-  redirect('/')
+  redirect('/gracias')
 }

@@ -3,21 +3,17 @@ import FormCheckBox from "@/components/myComponents/form/FormCheckBox";
 import FormContainer from "@/components/myComponents/form/FormContainer";
 import FormInput from "@/components/myComponents/form/FormInput";
 // import FormSelect from "@/components/myComponents/form/FormSelect";
-
 import { Separator } from "@/components/ui/separator";
 
-import { getUnaPreAplicacion, updatePreAplicacion } from "@/utils/actions";
+import { crearPreAplicacion, fetchProfile } from "@/utils/actions";
 import { redirect } from "next/navigation";
 
 
-const EditarPreAplicacionPage = async () => {
+const AplicacionPage = async () => {
 
+  const perfil = await fetchProfile()
 
-  const currentApplicacion = await getUnaPreAplicacion()
-
-  // console.log(currentApplicacion)
-
-  if (!currentApplicacion) redirect('/mi-preAplicacion')
+  if (!perfil) return redirect('/perfil/crear')
 
   return (
     <div>
@@ -26,20 +22,37 @@ const EditarPreAplicacionPage = async () => {
       <div className="border rounded-xl mt-14 p-4">
 
 
-        <div className="mb-20 bg-muted p-6 rounded-lg shadow-lg">
+        {/* <div className="mb-20 bg-muted p-3">
+
           <h3 className="text-2xl font-bold text-blue-600 text-center mb-4">
-            ¡Editar tu Pre-Aplicación!
+            ¡Pre-Aplicación Simplificada!
           </h3>
 
           <h5 className="text-lg font-medium text-gray-700 text-center mb-4">
-            Haz los cambios necesarios en tu información.
+            Completa el formulario con tu información básica y descubre si calificas para la I-131F (Programa Manteniendo Familias Unidas).
           </h5>
 
+          <h5 className="text-lg font-medium text-gray-700 text-center">
+            Obtén una respuesta en menos de <span className="text-blue-600 font-semibold">4 minutos</span>.
+          </h5>
+        </div> */}
+
+
+        <div className="mb-20 bg-muted p-6 rounded-lg shadow-lg">
+          <h3 className="text-2xl font-bold text-blue-600 text-center mb-4">
+            ¡Pre-Aplicación Simplificada!
+          </h3>
+
+          <h5 className="text-lg font-medium text-gray-700 text-center mb-4">
+            Estás a un paso de cambiar tu vida. Completa el formulario con tu información básica y descubre si calificas para la I-131F (Programa Manteniendo Familias Unidas).
+          </h5>
+
+          <h5 className="text-xl font-semibold text-blue-600  text-center">
+            Respuesta inmediata.
+          </h5>
         </div>
 
-
-
-        <FormContainer action={updatePreAplicacion}>
+        <FormContainer action={crearPreAplicacion}>
           <h1 className="text-primary font-semibold my-3">Información del Aplicante</h1>
 
           <div className="grid md:grid-cols-2 gap-8 mb-4 items-center justify-center">
@@ -48,7 +61,7 @@ const EditarPreAplicacionPage = async () => {
               type="text"
               label="Nombre"
               placeholder="Ej: María"
-              defaultValue={currentApplicacion.applicantLegalFirstName}
+              defaultValue={perfil?.nombre || ''}
             />
 
             {/* <FormInput
@@ -57,8 +70,6 @@ const EditarPreAplicacionPage = async () => {
               required={false}
               label="Segundo Nombre (opcional)"
               placeholder="Ej: Isabel"
-              defaultValue={currentApplicacion.applicantLegalMiddleName ?? ''}
-
             /> */}
 
             <FormInput
@@ -66,8 +77,7 @@ const EditarPreAplicacionPage = async () => {
               type="text"
               label="Apellido"
               placeholder="Ej: Morales"
-              defaultValue={currentApplicacion.applicantLegalLastName}
-
+              defaultValue={perfil?.apellido || ''}
             />
 
             {/* <FormInput
@@ -75,7 +85,6 @@ const EditarPreAplicacionPage = async () => {
               type="date"
               label="Fecha de Nacimiento"
               placeholder="Ej: 15-10-2005"
-              defaultValue={currentApplicacion.applicantDOB?.toISOString().split('T')[0]}
             /> */}
 
             <FormInput
@@ -83,7 +92,6 @@ const EditarPreAplicacionPage = async () => {
               type="text"
               label="Dirección Física"
               placeholder="Ej: 7169 Harbor St, Orlando, FL 32835"
-              defaultValue={currentApplicacion.addressFisical}
             />
 
             <FormInput
@@ -91,15 +99,14 @@ const EditarPreAplicacionPage = async () => {
               type="text"
               label="Teléfono"
               placeholder="Ej: 407-888-8888"
-              defaultValue={currentApplicacion.phone}
+              defaultValue={perfil?.telefono || ''}
             />
-
-            {/* <FormInput
+            {/* 
+            <FormInput
               name="email"
               type="email"
               label="Correo Electrónico"
               placeholder="Ej: jenny@yahoo.com"
-              defaultValue={currentApplicacion.email}
             /> */}
 
             <FormInput
@@ -107,7 +114,6 @@ const EditarPreAplicacionPage = async () => {
               type="text"
               label="País donde Naciciste"
               placeholder="México"
-              defaultValue={currentApplicacion.paisNacimiento}
             />
 
             {/* <FormSelect
@@ -118,20 +124,18 @@ const EditarPreAplicacionPage = async () => {
                 { name: 'Femenino' },
                 { name: 'Prefiero no decir' }
               ]}
-              defaultValue={currentApplicacion.sexo}
-            />
+            /> */}
 
-            <FormSelect
+            {/* <FormSelect
               name="etnicity"
               label="Grupo Étnico"
               list={[
                 { name: 'Hispano o Latino' },
                 { name: 'No soy hispano o latino' },
               ]}
-              defaultValue={currentApplicacion.etnicity}
-            />
+            /> */}
 
-            <FormSelect
+            {/* <FormSelect
               name="race"
               label="Raza"
               list={[
@@ -141,15 +145,13 @@ const EditarPreAplicacionPage = async () => {
                 { name: 'Nativo de Hawái u Otro Isleño del Pacífico' },
                 { name: 'Blanco' },
               ]}
-              defaultValue={currentApplicacion.race}
             /> */}
 
             <FormInput
               name="dateOfMarriage"
               type="date"
-              label="Fecha en que te casaste con un Ciudadano Americano (Si no recuerdas, pon un aproximado)"
+            label="Fecha en que te casaste con un Ciudadano Americano (Si no recuerdas, pon un aproximado)"
               placeholder="Ej: 15-10-2018"
-              defaultValue={currentApplicacion.dateOfMarriage?.toISOString().split('T')[0]}
             />
           </div>
 
@@ -157,9 +159,8 @@ const EditarPreAplicacionPage = async () => {
             <FormInput
               name="applicantWhenArrivedToUS"
               type="date"
-              label="Fecha en que entraste a Estados Unidos (Si no recuerdas, pon un aproximado)"
+            label="Fecha en que entraste a Estados Unidos (Si no recuerdas, pon un aproximado)"
               placeholder="Ej: 15-10-2005"
-              defaultValue={currentApplicacion.applicantWhenArrivedToUS?.toISOString().split('T')[0]}
             />
           </div>
 
@@ -168,19 +169,11 @@ const EditarPreAplicacionPage = async () => {
           <h1 className="text-primary font-semibold my-3">Información Legal del Aplicante</h1>
 
           <div className="mb-8">
-            <FormCheckBox name="esSpouse" texto="Marca si eres cónyuge (esposo/a) de un ciudadano americano"
-              checked={currentApplicacion.esSpouse}
-
-            />
-            <FormCheckBox name="esStepchild" texto="Marca si eres hijastro/a de un ciudadano americano"
-
-            />
+            <FormCheckBox name="esSpouse" texto="Marca si eres cónyuge (esposo/a) de un ciudadano americano" />
+            <FormCheckBox name="esStepchild" texto="Marca si eres hijastro/a de un ciudadano americano" />
           </div>
-          <FormCheckBox name="applicantHasBeenDeported" texto="Marca si has sido deportado de los Estados Unidos"
-
-          />
+          <FormCheckBox name="applicantHasBeenDeported" texto="Marca si has sido deportado de los Estados Unidos" />
           <FormCheckBox name="applicantHasArrests" texto="Marca si has tenido arrestos dentro de los Estados Unidos" />
-
 
 
           <Separator orientation="horizontal" className="my-6" />
@@ -193,7 +186,6 @@ const EditarPreAplicacionPage = async () => {
               type="text"
               label="Nombre de tu Cónyuge "
               placeholder="Ej: James"
-              defaultValue={currentApplicacion.spouseThatIsCitizenLegalFirstName}
             />
 
             {/* <FormInput
@@ -201,7 +193,7 @@ const EditarPreAplicacionPage = async () => {
               type="text"
               required={false}
               label="Segundo Nombre de tu Cónyuge (opcional)  "
-              defaultValue={currentApplicacion.spouseThatIsCitizenLegalMiddleName ?? ''}
+              placeholder="Ej: Steven "
             /> */}
 
             <FormInput
@@ -209,15 +201,13 @@ const EditarPreAplicacionPage = async () => {
               type="text"
               label="Apellido de tu Cónyuge (opcional) "
               placeholder="Ej: Smith"
-              defaultValue={currentApplicacion.spouseThatIsCitizenLegalLastName}
             />
-            {/* 
-            <FormInput
+
+            {/* <FormInput
               name="spouseThatIsCitizenDOB"
               type="date"
               label="Fecha de Nacimiento de tu Cónyuge"
               placeholder="Ej: 15 de julio de 1980"
-              defaultValue={currentApplicacion.spouseThatIsCitizenDOB?.toISOString().split('T')[0]}
             /> */}
           </div>
 
@@ -225,9 +215,7 @@ const EditarPreAplicacionPage = async () => {
 
 
           <div className="flex items-center justify-center w-full">
-
-
-            <SubmitButton text="Submitir Cambios" className="mt-12" />
+            <SubmitButton text="Submitir Aplicación" className="mt-12" />
           </div>
         </FormContainer>
       </div>
@@ -235,4 +223,4 @@ const EditarPreAplicacionPage = async () => {
   );
 }
 
-export default EditarPreAplicacionPage;
+export default AplicacionPage;
