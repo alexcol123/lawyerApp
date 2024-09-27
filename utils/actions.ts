@@ -115,6 +115,22 @@ export const updateProfileAction = async (
   }
 }
 
+export const preAplicationSubmited = async () => {
+  const user = await getAuthUser()
+
+  await db.perfil.update({
+    where: {
+      clerkId: user.id,
+    },
+    data: {
+      preAplicacionCompleted: true,
+    },
+  })
+
+
+ redirect('/resultado')
+}
+
 
 export const updateProfileImageAction = async (
   prevState: null,
@@ -171,6 +187,18 @@ export const fetchProfileImage = async () => {
 export const crearPreAplicacion = async (prevState: null, formData: FormData) => {
   const user = await getAuthUser()
 
+  // check if preaplicacion already exists if so redirect to verify page
+  const preAplicacion = await db.preAplicacion.findFirst({
+    where: {
+      perfilId: user.id,
+    },
+  })
+
+  if (preAplicacion) {
+    return redirect('/verificar-mi-preAplicacion')
+  }
+
+
 
   try {
     const rawData = Object.fromEntries(formData)
@@ -198,7 +226,7 @@ export const crearPreAplicacion = async (prevState: null, formData: FormData) =>
     return renderError(error)
   }
 
-  redirect('/mi-preAplicacion')
+  redirect('/verificar-mi-preAplicacion')
 }
 
 export const getUnaPreAplicacion = async () => {
@@ -239,5 +267,28 @@ export const updatePreAplicacion = async (
     return renderError(error)
   }
 
-  redirect('/mi-preAplicacion')
-} 
+  redirect('/verificar-mi-preAplicacion')
+}
+
+//  to add new field to existing users
+// import { PrismaClient } from '@prisma/client';
+
+// const prisma = new PrismaClient();
+
+// async function updateExistingUsers() {
+//   await prisma.perfil.updateMany({
+//     data: {
+//       preAplicacionCompleted: false, // Set your default value here
+//     },
+//   });
+//   console.log('All existing users updated with the new field value.');
+// }
+
+// updateExistingUsers()
+//   .catch((e) => {
+//     console.error(e);
+//   })
+//   .finally(async () => {
+//     await prisma.$disconnect();
+//   });
+

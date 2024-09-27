@@ -13,7 +13,12 @@ const PreAplicacionPage = async () => {
 
   const perfil = await fetchProfile()
 
+  console.log(perfil)
+
   if (!perfil) return redirect('/perfil/crear')
+
+  if (perfil?.applicationDepositPaid99Dollars) return redirect('/gracias')
+  if (perfil?.preAplicacionCompleted) return redirect('/resultado/ver')
 
   return (
     <div>
@@ -22,20 +27,7 @@ const PreAplicacionPage = async () => {
       <div className="border rounded-xl mt-14 p-4">
 
 
-        {/* <div className="mb-20 bg-muted p-3">
 
-          <h3 className="text-2xl font-bold text-blue-600 text-center mb-4">
-            ¡Pre-Aplicación Simplificada!
-          </h3>
-
-          <h5 className="text-lg font-medium text-gray-700 text-center mb-4">
-            Completa el formulario con tu información básica y descubre si calificas para la I-131F (Programa Manteniendo Familias Unidas).
-          </h5>
-
-          <h5 className="text-lg font-medium text-gray-700 text-center">
-            Obtén una respuesta en menos de <span className="text-blue-600 font-semibold">4 minutos</span>.
-          </h5>
-        </div> */}
 
 
         <div className="mb-20 bg-muted p-6 rounded-lg shadow-lg">
@@ -150,7 +142,7 @@ const PreAplicacionPage = async () => {
             <FormInput
               name="dateOfMarriage"
               type="date"
-            label="Fecha en que te casaste con un Ciudadano Americano (Si no recuerdas, pon un aproximado)"
+              label="Fecha en que te casaste con un Ciudadano Americano (Si no recuerdas, pon un aproximado)"
               placeholder="Ej: 15-10-2018"
             />
           </div>
@@ -159,7 +151,7 @@ const PreAplicacionPage = async () => {
             <FormInput
               name="applicantWhenArrivedToUS"
               type="date"
-            label="Fecha en que entraste a Estados Unidos (Si no recuerdas, pon un aproximado)"
+              label="Fecha en que entraste a Estados Unidos (Si no recuerdas, pon un aproximado)"
               placeholder="Ej: 15-10-2005"
             />
           </div>

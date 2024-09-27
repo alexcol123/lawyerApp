@@ -14,6 +14,7 @@ import { redirect } from 'next/navigation';
 async function CreateProfile() {
 
   const user = await currentUser();
+  
   if (user?.privateMetadata?.tienePerfil) redirect('/preAplicacion');
 
   return (

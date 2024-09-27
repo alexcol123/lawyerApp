@@ -47,7 +47,7 @@ function BlogLanding() {
         <link rel="canonical" href="https://tusitio.com/manteniendo-a-las-familias-unidas" />
       </Head>
 
-      <div className="min-h-screen bg-gray-50 pt-32">
+      <div className="min-h-screen bg-gray-50 pt-2">
         {/* Hero Section */}
         <div className="bg-primary/20 py-16 px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto">

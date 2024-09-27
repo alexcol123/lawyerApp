@@ -1,14 +1,21 @@
-import { getUnaPreAplicacion } from "@/utils/actions";
+import { getUnaPreAplicacion, preAplicationSubmited } from "@/utils/actions";
 import { formatDate } from "@/utils/format";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CalendarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import FormContainer from "@/components/myComponents/form/FormContainer";
+
+import { redirect } from 'next/navigation'
 
 const MiPreAplicacion = async () => {
 
   const application = await getUnaPreAplicacion();
+
+  if (!application) redirect('/preAplicacion')
+
+
 
   if (!application) return <div className="min-h-screen flex items-center justify-center text-muted-foreground">No hay aplicaciones</div>;
 
@@ -64,9 +71,15 @@ const MiPreAplicacion = async () => {
           <Button variant="outline" className="w-full sm:w-auto">
             <Link href="/preAplicacion/editar">Editar</Link>
           </Button>
-          <Button className="w-full sm:w-auto">
+          {/* <Button className="w-full sm:w-auto">
             <Link href="/resultado">Procesar</Link>
-          </Button>
+          </Button> */}
+          <FormContainer action={preAplicationSubmited}>
+            <Button type='submit' className="w-full sm:w-auto">
+              Procesar Ahora
+            </Button>
+          </FormContainer>
+
         </CardFooter>
       </Card>
     </div>
@@ -83,5 +96,10 @@ const InfoRow = ({ label, value, icon = null }: { label: string, value: React.Re
     </div>
   </div>
 );
+
+
+
+
+
 
 export default MiPreAplicacion;

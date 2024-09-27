@@ -11,21 +11,7 @@ const Footer = () => {
           <p className="text-sm mt-1">Formulario I-131F</p>
         </div>
 
-        {/* Navegación */}
-        <nav className="flex flex-wrap justify-center space-x-4 md:space-x-6 text-sm">
-          <Link href="/inicio">
-            <div className="hover:text-white transition-colors cursor-pointer">Inicio</div>
-          </Link>
-          <Link href="/precalificacion">
-            <div className="hover:text-white transition-colors cursor-pointer">Pre-calificación</div>
-          </Link>
-          <Link href="/blog">
-            <div className="hover:text-white transition-colors cursor-pointer">Blog</div>
-          </Link>
-          <Link href="/contacto">
-            <div className="hover:text-white transition-colors cursor-pointer">Contacto</div>
-          </Link>
-        </nav>
+
 
         {/* Información de Contacto */}
         <div className="text-center md:text-right">
@@ -38,10 +24,6 @@ const Footer = () => {
             </Link>
           </p>
 
-
-          <p className="text-sm">
-            Email: <span className="hover:text-white cursor-pointer">info@tusitio.com</span>
-          </p>
         </div>
       </div>
 

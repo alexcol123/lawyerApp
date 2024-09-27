@@ -3,7 +3,8 @@ import FormContainer from "@/components/myComponents/form/FormContainer"
 import FormInput from "@/components/myComponents/form/FormInput"
 import ImageInputContainer from "@/components/myComponents/form/ImageInputContainer copy"
 
-import { fetchProfile,
+import {
+  fetchProfile,
   updateProfileAction,
   updateProfileImageAction
 
@@ -13,6 +14,9 @@ import { fetchProfile,
 const PerfilPage = async () => {
   const perfil = await fetchProfile()
 
+
+
+
   return (
     <section>
       <h1 className='text-2xl font-semibold mb-8 capitalize'>Perfil Usuario</h1>
@@ -21,7 +25,7 @@ const PerfilPage = async () => {
 
 
 
-<ImageInputContainer
+        <ImageInputContainer
           isProfile={true}
           multipleImages={false}
           inputName={'imagenPerfil'}
@@ -37,11 +41,11 @@ const PerfilPage = async () => {
 
             <FormInput type='text' name='nombre' label='nombre' defaultValue={perfil.nombre} />
             <FormInput type='text' name='apellido' label='apellido' defaultValue={perfil.apellido} />
-  
-      
-            <FormInput type='tel' name='telefono' label='telefono (De Estados Unidos)' 
-            defaultValue={perfil.telefono} />
-{/* 
+
+
+            <FormInput type='tel' name='telefono' label='telefono (De Estados Unidos)'
+              defaultValue={perfil.telefono} />
+            {/* 
             <FormInput type='text' name='email' label='email'
                       defaultValue={perfil.email}  /> */}
 

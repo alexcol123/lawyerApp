@@ -34,8 +34,8 @@ const SingleBlogPage = ({ params }: { params: { id: string } }) => {
         <meta name="twitter:image" content={blog.image || '/images/familia.jpg'} />
       </Head>
 
-      <div className="pt-24 md:pt-32">
-        <div className="min-h-screen bg-gray-50 px-4 py-8 md:py-12">
+      <div className="pt-2">
+        <div className="min-h-screen bg-gray-50 px-4 py-2">
           <div className="max-w-3xl mx-auto">
             {/* Botón para regresar a la lista de blogs */}
             <div className="mb-4">
