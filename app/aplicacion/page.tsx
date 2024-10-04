@@ -33,7 +33,7 @@ const AplicacionPage = async () => {
           </h5>
 
           <h5 className="text-lg font-medium text-gray-700 text-center">
-            Obtén una respuesta en menos de <span className="text-blue-600 font-semibold">4 minutos</span>.
+            Obtén una respuesta en menos de <span className="text-blue-600 font-semibold">2 minutos</span>.
           </h5>
         </div> */}
 
@@ -150,7 +150,7 @@ const AplicacionPage = async () => {
             <FormInput
               name="dateOfMarriage"
               type="date"
-            label="Fecha en que te casaste con un Ciudadano Americano (Si no recuerdas, pon un aproximado)"
+              label="Fecha en que te casaste con un Ciudadano Americano (Si no recuerdas, pon un aproximado)"
               placeholder="Ej: 15-10-2018"
             />
           </div>
@@ -159,7 +159,7 @@ const AplicacionPage = async () => {
             <FormInput
               name="applicantWhenArrivedToUS"
               type="date"
-            label="Fecha en que entraste a Estados Unidos (Si no recuerdas, pon un aproximado)"
+              label="Fecha en que entraste a Estados Unidos (Si no recuerdas, pon un aproximado)"
               placeholder="Ej: 15-10-2005"
             />
           </div>

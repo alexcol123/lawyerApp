@@ -4,6 +4,7 @@ import { blogs } from "@/utils/list";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import { VerSiCalificoBtn } from "@/components/myComponents/landing/MyButtons";
 
 const SingleBlogPage = ({ params }: { params: { id: string } }) => {
   const id = params.id;
@@ -87,14 +88,9 @@ const SingleBlogPage = ({ params }: { params: { id: string } }) => {
 
                 {/* Botón para ver si califican al programa */}
                 <div>
-                  <Link href="/ver-si-calificas" passHref>
-                    <Button
-                      variant="default"
-                      className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg transition-transform transform hover:scale-105"
-                    >
-                      Ver si Califico
-                    </Button>
-                  </Link>
+              
+                  <VerSiCalificoBtn />
+        
                 </div>
 
                 {/* Texto adicional para llamada */}

@@ -43,7 +43,7 @@ export const preguntasFrequentes: PreguntaTypes[] = [
   // Preguntas sobre la Agencia Legal Digital
   {
     pregunta: "¿Cuánto cuesta el servicio para aplicar al Programa Familias Unidas con su agencia?",
-    respuesta: "Nuestro servicio cuesta $499, y puedes empezar con solo $199 como pago inicial."
+    respuesta: "Nuestro servicio cuesta $499, y puedes empezar con solo $99 como pago inicial."
   },
   {
     pregunta: "¿Por qué su agencia cobra menos que otras agencias tradicionales?",
@@ -55,7 +55,7 @@ export const preguntasFrequentes: PreguntaTypes[] = [
   },
   {
     pregunta: "¿Puedo pagar en cuotas?",
-    respuesta: "Sí, puedes empezar con un pago inicial de $199 y pagar el resto en cómodas cuotas durante el proceso."
+    respuesta: "Sí, puedes empezar con un pago inicial de $99 y pagar el resto en cómodas cuotas durante el proceso."
   },
   {
     pregunta: "¿Qué diferencia hay entre su agencia digital y una agencia tradicional?",

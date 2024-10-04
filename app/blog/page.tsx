@@ -7,6 +7,35 @@ import Link from 'next/link';
 import Footer from '../landing/Footer';
 import Head from 'next/head';
 
+import type { Metadata } from 'next'
+import { VerSiCalificoBtn } from '@/components/myComponents/landing/MyButtons';
+
+export const metadata: Metadata = {
+  title: 'Manteniendo a las Familias Unidas con el Formulario I-131F | Información y Asesoría',
+  description:
+    'Descubre todo sobre el programa Manteniendo a las Familias Unidas con el Formulario I-131F. Somos la única web dedicada a ofrecer información completa y asesoría para mantener a las familias unidas en Estados Unidos.',
+  keywords: 'Manteniendo a las Familias Unidas, Formulario I-131F, inmigración familiar, reunificación familiar, permiso de permanencia temporal, visa familiar, inmigración a Estados Unidos, asesoría inmigratoria, ayuda inmigración, reunificación familiar Estados Unidos',
+  openGraph: {
+    type: 'website',
+    locale: 'es_US',
+    title: 'Manteniendo a las Familias Unidas con el Formulario I-131F | Información y Asesoría',
+    description:
+      'Somos la única página web dedicada exclusivamente al programa Manteniendo a las Familias Unidas con el Formulario I-131F. Encuentra aquí toda la información y asesoría para mantener a tu familia unida en Estados Unidos.',
+    images: [
+      {
+        url: '/images/blog/blog.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Manteniendo a las Familias Unidas con el Formulario I-131F | Información y Asesoría',
+      },
+    ],
+  },
+
+
+
+}
+
+
 // data/blogs.json
 
 function BlogLanding() {
@@ -61,14 +90,9 @@ function BlogLanding() {
               proceso.
             </p>
             <div className="mt-6">
-              <Link href="/ver-si-calificas" passHref>
-                <Button
-                  variant="default"
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg transition-transform transform hover:scale-105"
-                >
-                  Ver si Califico
-                </Button>
-              </Link>
+         
+                <VerSiCalificoBtn />
+     
             </div>
           </div>
         </div>
@@ -85,8 +109,8 @@ function BlogLanding() {
                     src={blog.image ? blog.image : '/images/blog/blog.webp'}
                     alt="Artículo"
                     fill
-                 
-                 
+
+
                     className="rounded-t-lg object-cover"
                   />
                 </div>

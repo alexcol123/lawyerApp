@@ -194,24 +194,6 @@ const LandingMain = () => {
           ¡No pierdas esta oportunidad de cambiar tu vida!
         </p>
       </div>
-
-      <div className="bg-gray-200 py-12">
-  <div className="container mx-auto text-center">
-    <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-      Noticias de Inmigración y Actualizaciones
-    </h2>
-    <p className="text-lg md:text-xl text-gray-700 mb-6">
-      Mantente informado sobre las últimas noticias de inmigración y cómo el programa 
-      <span className="font-bold"> Manteniendo a las Familias Unidas</span> está ayudando a miles de familias a obtener su residencia en Estados Unidos.
-    </p>
-    <a
-      href="/blog"
-      className="bg-blue-600 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all"
-    >
-      Visitar Blog
-    </a>
-  </div>
-</div>
     </div>
   );
 };
